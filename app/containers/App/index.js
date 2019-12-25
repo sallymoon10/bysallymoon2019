@@ -8,21 +8,30 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import HomePage from '../../containers/HomePage/Loadable';
+import NotFoundPage from '../../containers/NotFoundPage/Loadable';
 
-import GlobalStyle from '../../global-styles';
+import DevWork from '../../containers/DevWork/Loadable';
+import DesignWork from '../../containers/DesignWork/Loadable';
+import Resume from '../../containers/Resume/Loadable';
+import Contacts from '../../containers/Contacts/Loadable';
+
 
 export default function App() {
   return (
     <div>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-      <GlobalStyle />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/devwork" component={DevWork} />
+          <Route exact path="/designwork" component={DesignWork} />
+          <Route exact path="/resumé" component={Resume} />
+          <Route exact path="/contacts" component={Contacts} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </Router>
     </div>
   );
 }
