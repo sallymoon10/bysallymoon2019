@@ -16,12 +16,6 @@ const Container = styled.div`
   width: 100%;
 `;
 
-const Header = styled.div`
-  flex: 2;
-  padding: 10%;
-  background-color: #ffffff;
-`;
-
 const Section = styled.div`
   display: flex;
   flex-direction: row;
