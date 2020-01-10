@@ -10,7 +10,6 @@ import ResumeButtonActive from '../images/Buttons/ResumeButtonActive.png';
 import ContactsButton from '../images/Buttons/ContactButton.png';
 import ContactsButtonActive from '../images/Buttons/ContactButtonActive.png';
 import logoButton from '../images/Landing/logo.png';
-import logoButtonActive from '../images/Landing/logoActive.png';
 
 // The Header creates links that can be used to navigate
 // between routes.
