@@ -1,25 +1,16 @@
 /*
- * HomePage
- *
- * This is the first thing users see of our App, at the '/' route
- *
+ * Dev work page
  */
 
 import React from 'react';
 import styled from 'styled-components';
 import NavBar from '../../components/NavBar';
 import abStandardsButton from '../../images/WorkButtons/AbStandardsButton.png';
-import blueteamButton from '../../images/WorkButtons/BlueteamButton.png';
-import cadButton from '../../images/WorkButtons/CADButton.png';
-import couerButton from '../../images/WorkButtons/CoeurButton.png';
-import flaticonButton from '../../images/WorkButtons/FlatIconButton.png';
 import heatmapButton from '../../images/WorkButtons/HeatmapButton.png';
 import imageClassificationButton from '../../images/WorkButtons/ImageClassificationButton.png';
-import lineIconButton from '../../images/WorkButtons/LineIconButton.png';
 import matlabButton from '../../images/WorkButtons/MatlabButton.png';
 import reactNativeButton from '../../images/WorkButtons/ReactNativeButton.png';
 import resnetButton from '../../images/WorkButtons/ResnetButton.png';
-import spacesquirrelButton from '../../images/WorkButtons/SpaceSquirrelButton.png';
 import unityButton from '../../images/WorkButtons/Unity3DButton.png';
 import processingButton from '../../images/WorkButtons/ProcessingButton.png';
 import WorkButton from '../../components/WorkButton';
