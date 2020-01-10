@@ -11,6 +11,10 @@ import colors from '../../components/Colors';
 import NavBar from '../../components/NavBar';
 import {Link } from "react-router-dom";
 
+import ViewResumeButton from '../../images/Landing/ViewResumeButton.png';
+import ViewWorkButton from '../../images/Landing/ViewWorkButton.png';
+import ViewContactButton from '../../images/Landing/ViewContactButton.png';
+
 
 const Container = styled.div`
   width: 100%;
@@ -82,49 +86,71 @@ const ButtonImage = styled.img`
   height: 50%;
 `;
 
-export default function HomePage() {
-  return (
-    <Container>
-      <NavBar />
-      <Section style={{backgroundColor: colors.white}}>
-        <Image src={require('../../images/Landing/Intro.png')}/>
-      </Section>
-      <Section style={{backgroundColor: colors.red}}>
-        <SectionImage src={require('../../images/Landing/AILandingSection.png')}/>
-        <RightButton style={{backgroundColor: 'transparent'}}>
-          <Link to="/resumé">
-            <ButtonImage src={require('../../images/Landing/ViewResumeButton.png')}/>
-          </Link>
-        </RightButton>
-      </Section>
-      <Section style={{backgroundColor: colors.blue}}>
-        <SectionImage src={require('../../images/Landing/CodeLandingSection.png')}/>
-        <LeftButton style={{backgroundColor: 'transparent'}}>
-          <Link to="/devwork">
-            <ButtonImage src={require('../../images/Landing/ViewWorkButton.png')}/>
-          </Link>
-        </LeftButton>
-      </Section>
-      <Section style={{backgroundColor: colors.red}}>
-        <SectionImage src={require('../../images/Landing/DesignLandingSection.png')}/>
-        <RightButton style={{backgroundColor: 'transparent'}}>
-          <Link to="/designwork">
-            <ButtonImage src={require('../../images/Landing/ViewWorkButton.png')}/>
-          </Link>
-        </RightButton>
-      </Section>
-      <Section style={{backgroundColor: colors.white}}>
-        <SectionImage src={require('../../images/Landing/LetsWork.png')}/>
-        <CenterButton style={{backgroundColor: 'transparent'}}>
-          <Link to="/contacts">
-            <ButtonImage src={require('../../images/Landing/ViewContactButton.png')}/>
-          </Link>
-        </CenterButton>
-      </Section>
-      <Footer style={{backgroundColor: colors.grey}}>
-        <SectionImage src={require('../../images/Landing/Footer.png')}/>
-      </Footer>
-    </Container>
-  );
+class HomePage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {resumeButtonHover: false};
+    this.state = {devWorkButtonHover: false};
+    this.state = {designWorkButtonHover: false};
+    this.state = {contactsButtonHover: false};
+  }
+  render() {
+    return (
+      <Container>
+        <NavBar />
+        <Section style={{backgroundColor: colors.white}}>
+          <Image src={require('../../images/Landing/Intro.png')}/>
+        </Section>
+        <Section style={{backgroundColor: colors.red}}>
+          <SectionImage src={require('../../images/Landing/AILandingSection.png')}/>
+          <RightButton style={{backgroundColor: 'transparent'}}>
+            <Link to="/resumé">
+              <ButtonImage src={ViewResumeButton}
+                           onMouseOut={() => this.setState({resumeButtonHover: false})}
+                           onMouseOver={() => this.setState({resumeButtonHover: true})}
+                           style={{transform: `${this.state.resumeButtonHover ? 'scale(1.05,1.05)' : 'scale(1,1)'}`}}/>
+            </Link>
+          </RightButton>
+        </Section>
+        <Section style={{backgroundColor: colors.blue}}>
+          <SectionImage src={require('../../images/Landing/CodeLandingSection.png')}/>
+          <LeftButton style={{backgroundColor: 'transparent'}}>
+            <Link to="/devwork">
+              <ButtonImage src={ViewWorkButton}
+                           onMouseOut={() => this.setState({devWorkButtonHover: false})}
+                           onMouseOver={() => this.setState({devWorkButtonHover: true})}
+                           style={{transform: `${this.state.devWorkButtonHover ? 'scale(1.05,1.05)' : 'scale(1,1)'}`}}/>
+            </Link>
+          </LeftButton>
+        </Section>
+        <Section style={{backgroundColor: colors.red}}>
+          <SectionImage src={require('../../images/Landing/DesignLandingSection.png')}/>
+          <RightButton style={{backgroundColor: 'transparent'}}>
+            <Link to="/designwork">
+              <ButtonImage src={ViewWorkButton}
+                           onMouseOut={() => this.setState({designWorkButtonHover: false})}
+                           onMouseOver={() => this.setState({designWorkButtonHover: true})}
+                           style={{transform: `${this.state.designWorkButtonHover ? 'scale(1.05,1.05)' : 'scale(1,1)'}`}}/>
+            </Link>
+          </RightButton>
+        </Section>
+        <Section style={{backgroundColor: colors.white}}>
+          <SectionImage src={require('../../images/Landing/LetsWork.png')}/>
+          <CenterButton style={{backgroundColor: 'transparent'}}>
+            <Link to="/contacts">
+              <ButtonImage src={ViewContactButton}
+                           onMouseOut={() => this.setState({contactsButtonHover: false})}
+                           onMouseOver={() => this.setState({contactsButtonHover: true})}
+                           style={{transform: `${this.state.contactsButtonHover ? 'scale(1.05,1.05)' : 'scale(1,1)'}`}}/>
+            </Link>
+          </CenterButton>
+        </Section>
+        <Footer style={{backgroundColor: colors.grey}}>
+          <SectionImage src={require('../../images/Landing/Footer.png')}/>
+        </Footer>
+      </Container>
+    );
+  }
 }
 
+export default HomePage
