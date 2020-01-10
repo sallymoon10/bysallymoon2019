@@ -17,7 +17,7 @@ const Container = styled.div`
 export default function DevWork() {
   return (
     <Container>
-      <NavBar />
+      <NavBar/>
       dev work
     </Container>
   );
