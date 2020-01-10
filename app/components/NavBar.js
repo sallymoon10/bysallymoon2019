@@ -63,44 +63,50 @@ function contactsActive(e) {
 function contactsInactive(e) {
   e.currentTarget.src =  ContactsButton;
 }
-function logoActive(e) {
-  e.currentTarget.src =  logoButtonActive;
+class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {logoHover: false};
+  }
+
+  render() {
+    return (
+      <NavContainer>
+        <NavItem>
+          <Link to="/devwork">
+            {this.props.devState ? <Image src={DevButtonActive}/>
+              : <Image src={DevButton} onMouseOver={devActive} onMouseOut={devInactive}/>}
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/designwork">
+            {this.props.designState ? <Image src={DesignButtonActive}/>
+              : <Image src={DesignButton} onMouseOver={designActive} onMouseOut={designInactive}/>}
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/">
+            <Logo src={logoButton}
+                  onMouseOut={() => this.setState({logoHover: false})}
+                  onMouseOver={() => this.setState({logoHover: true})}
+                  style={{transform: `${this.state.logoHover ? 'scale(1.05,1.05)' : 'scale(1,1)'}`}}/>
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/resumé">
+            {this.props.resumeState ? <Image src={ResumeButtonActive}/>
+              : <Image src={ResumeButton} onMouseOver={resumeActive} onMouseOut={resumeInactive}/>}
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/contacts">
+            {this.props.contactsState ? <Image src={ContactsButtonActive}/>
+              : <Image src={ContactsButton} onMouseOver={contactsActive} onMouseOut={contactsInactive}/>}
+          </Link>
+        </NavItem>
+      </NavContainer>
+    );
+  }
 }
-function logoInactive(e) {
-  e.currentTarget.src =  logoButton;
-}
-
-
-const NavBar = () => (
-  <NavContainer>
-    <NavItem>
-      <Link to="/devwork">
-        <Image src={DevButton} onMouseOver={devActive} onMouseOut={devInactive}/>
-      </Link>
-    </NavItem>
-    <NavItem>
-      <Link to="/designwork">
-        <Image src={DesignButton} onMouseOver={designActive} onMouseOut={designInactive}/>
-      </Link>
-    </NavItem>
-    <NavItem>
-      <Link to="/">
-        <Logo src={logoButton} onMouseOver={logoActive} onMouseOut={logoInactive}/>
-      </Link>
-    </NavItem>
-    <NavItem>
-      <Link to="/resumé">
-        <Image src={ResumeButton} onMouseOver={resumeActive} onMouseOut={resumeInactive}/>
-      </Link>
-    </NavItem>
-    <NavItem>
-      <Link to="/contacts">
-        <Image src={ContactsButton}  onMouseOver={contactsActive} onMouseOut={contactsInactive}/>
-      </Link>
-    </NavItem>
-  </NavContainer>
-);
-
-
 
 export default NavBar

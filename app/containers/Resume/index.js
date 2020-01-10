@@ -16,7 +16,7 @@ const Container = styled.div`
 export default function Resume() {
   return (
     <Container>
-      <NavBar />
+      <NavBar resumeState={true}/>
       <text>resume</text>
     </Container>
   );

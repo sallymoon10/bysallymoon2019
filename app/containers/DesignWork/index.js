@@ -16,7 +16,7 @@ const Container = styled.div`
 export default function DesignWork() {
   return (
     <Container>
-      <NavBar />
+      <NavBar designState={true}/>
       <text>design work</text>
     </Container>
   );

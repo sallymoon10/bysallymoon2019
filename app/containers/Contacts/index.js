@@ -16,7 +16,7 @@ const Container = styled.div`
 export default function Contacts() {
   return (
     <Container>
-      <NavBar />
+      <NavBar contactsState={true}/>
       contacts
     </Container>
   );
