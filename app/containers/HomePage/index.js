@@ -11,9 +11,9 @@ import colors from '../../components/Colors';
 import NavBar from '../../components/NavBar';
 import {Link } from "react-router-dom";
 
-import ViewResumeButton from '../../images/Landing/ViewResumeButton.png';
-import ViewWorkButton from '../../images/Landing/ViewWorkButton.png';
-import ViewContactButton from '../../images/Landing/ViewContactButton.png';
+import ViewResumeButton from '../../images/Buttons/ViewResumeButton.png';
+import ViewWorkButton from '../../images/Buttons/ViewWorkButton.png';
+import ViewContactButton from '../../images/Buttons/ViewContactButton.png';
 
 
 const Container = styled.div`
@@ -36,6 +36,7 @@ const Footer = styled.div`
   flex-direction: row;
   justifyContent: center;
   alignItems: center;
+  padding-right: 3%;
 `;
 
 

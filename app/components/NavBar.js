@@ -1,14 +1,14 @@
 import React from 'react'
 import {Link } from "react-router-dom";
 import styled from 'styled-components';
-import DevButton from '../images/Landing/DevButton.png';
-import DevButtonActive from '../images/Landing/DevButtonActive.png';
-import DesignButton from '../images/Landing/DesignButton.png';
-import DesignButtonActive from '../images/Landing/DesignButtonActive.png';
-import ResumeButton from '../images/Landing/ResumeButton.png';
-import ResumeButtonActive from '../images/Landing/ResumeButtonActive.png';
-import ContactsButton from '../images/Landing/ContactButton.png';
-import ContactsButtonActive from '../images/Landing/ContactButtonActive.png';
+import DevButton from '../images/Buttons/DevButton.png';
+import DevButtonActive from '../images/Buttons/DevButtonActive.png';
+import DesignButton from '../images/Buttons/DesignButton.png';
+import DesignButtonActive from '../images/Buttons/DesignButtonActive.png';
+import ResumeButton from '../images/Buttons/ResumeButton.png';
+import ResumeButtonActive from '../images/Buttons/ResumeButtonActive.png';
+import ContactsButton from '../images/Buttons/ContactButton.png';
+import ContactsButtonActive from '../images/Buttons/ContactButtonActive.png';
 import logoButton from '../images/Landing/logo.png';
 import logoButtonActive from '../images/Landing/logoActive.png';
 
