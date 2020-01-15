@@ -20,16 +20,32 @@ class WorkButton extends React.Component {
   }
 
   render() {
-    return (
-      <Button style={{backgroundColor: 'transparent'}}>
+    const isHover = this.state.hover;
+    let button;
+
+    if (isHover){
+      button =
+        <ButtonImage
+          src={this.props.hoverSrc}
+          onMouseOut={() => this.setState({hover: false})}
+          onMouseOver={() => this.setState({hover: true})}
+          style={{transform: `${this.state.hover ? 'scale(1.05,1.05)' : 'scale(1,1)'}`}}>
+        </ButtonImage>;
+    }
+    else{
+      button =
         <ButtonImage
           src={this.props.imgSrc}
           onMouseOut={() => this.setState({hover: false})}
           onMouseOver={() => this.setState({hover: true})}
           style={{transform: `${this.state.hover ? 'scale(1.05,1.05)' : 'scale(1,1)'}`}}>
-        </ButtonImage>
+        </ButtonImage>;
+    }
+    return (
+      <Button style={{backgroundColor: 'transparent'}}>
+        {button}
       </Button>
-    );
+      );
   }
 }
 

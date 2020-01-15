@@ -6,13 +6,22 @@ import React from 'react';
 import styled from 'styled-components';
 import NavBar from '../../components/NavBar';
 import abStandardsButton from '../../images/WorkButtons/AbStandardsButton.png';
+import abStandardsButtonHover from '../../images/WorkButtons/AbStandardsButtonHover.png';
 import heatmapButton from '../../images/WorkButtons/HeatmapButton.png';
+import heatmapButtonHover from '../../images/WorkButtons/HeatmapButtonHover.png';
 import imageClassificationButton from '../../images/WorkButtons/ImageClassificationButton.png';
+import imageClassificationButtonHover from '../../images/WorkButtons/ImageClassificationButtonHover.png';
 import matlabButton from '../../images/WorkButtons/MatlabButton.png';
+import matlabButtonHover from '../../images/WorkButtons/MatlabButtonHover.png';
 import reactNativeButton from '../../images/WorkButtons/ReactNativeButton.png';
+import reactNativeButtonHover from '../../images/WorkButtons/ReactNativeButtonHover.png';
 import resnetButton from '../../images/WorkButtons/ResnetButton.png';
+import resnetButtonHover from '../../images/WorkButtons/ResnetButtonHover.png';
 import unityButton from '../../images/WorkButtons/Unity3DButton.png';
+import unityButtonHover from '../../images/WorkButtons/Unity3DButtonHover.png';
 import processingButton from '../../images/WorkButtons/ProcessingButton.png';
+import processingButtonHover from '../../images/WorkButtons/ProcessingButtonHover.png';
+
 import WorkButton from '../../components/WorkButton';
 
 
@@ -51,26 +60,26 @@ export default function DevWork() {
         Machine Learning / AI
       </Header>
       <ButtonSection>
-        <WorkButton imgSrc={resnetButton}/>
-        <WorkButton imgSrc={imageClassificationButton}/>
-        <WorkButton imgSrc={matlabButton}/>
+        <WorkButton imgSrc={resnetButton} hoverSrc={resnetButtonHover}/>
+        <WorkButton imgSrc={imageClassificationButton} hoverSrc={imageClassificationButtonHover}/>
+        <WorkButton imgSrc={matlabButton} hoverSrc={matlabButtonHover}/>
       </ButtonSection>
 
       <Header>
         Mobile  & Web Apps
       </Header>
       <ButtonSection>
-        <WorkButton imgSrc={reactNativeButton}/>
-        <WorkButton imgSrc={heatmapButton}/>
-        <WorkButton imgSrc={abStandardsButton}/>
+        <WorkButton imgSrc={reactNativeButton} hoverSrc={reactNativeButtonHover}/>
+        <WorkButton imgSrc={heatmapButton} hoverSrc={heatmapButtonHover}/>
+        <WorkButton imgSrc={abStandardsButton} hoverSrc={abStandardsButtonHover}/>
       </ButtonSection>
 
       <Header>
         Games
       </Header>
       <ButtonSection>
-        <WorkButton imgSrc={unityButton}/>
-        <WorkButton imgSrc={processingButton}/>
+        <WorkButton imgSrc={unityButton} hoverSrc={unityButtonHover}/>
+        <WorkButton imgSrc={processingButton} hoverSrc={processingButtonHover}/>
       </ButtonSection>
     </Container>
   );

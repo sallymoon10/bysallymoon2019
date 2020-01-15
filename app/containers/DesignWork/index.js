@@ -6,11 +6,18 @@ import React from 'react';
 import styled from 'styled-components';
 import NavBar from '../../components/NavBar';
 import blueteamButton from '../../images/WorkButtons/BlueteamButton.png';
+import blueteamButtonHover from '../../images/WorkButtons/BlueteamButtonHover.png';
 import cadButton from '../../images/WorkButtons/CADButton.png';
+import cadButtonHover from '../../images/WorkButtons/CADButtonHover.png';
 import couerButton from '../../images/WorkButtons/CoeurButton.png';
+import couerButtonHover from '../../images/WorkButtons/CoeurButtonHover.png';
 import flaticonButton from '../../images/WorkButtons/FlatIconButton.png';
+import flaticonButtonHover from '../../images/WorkButtons/FlatIconButtonHover.png';
 import lineIconButton from '../../images/WorkButtons/LineIconButton.png';
+import lineIconButtonHover from '../../images/WorkButtons/LineIconButtonHover.png';
 import spacesquirrelButton from '../../images/WorkButtons/SpaceSquirrelButton.png';
+import spacesquirrelButtonHover from '../../images/WorkButtons/SpaceSquirrelButtonHover.png';
+
 import WorkButton from '../../components/WorkButton';
 
 const Container = styled.div`
@@ -47,18 +54,18 @@ export default function DevWork() {
         User Interface / UX designs
       </Header>
       <ButtonSection>
-        <WorkButton imgSrc={couerButton}/>
-        <WorkButton imgSrc={blueteamButton}/>
+        <WorkButton imgSrc={couerButton} hoverSrc={couerButtonHover}/>
+        <WorkButton imgSrc={blueteamButton} hoverSrc={blueteamButtonHover}/>
       </ButtonSection>
 
       <Header>
         2D Illustrations / 3D assets
       </Header>
       <ButtonSection>
-        <WorkButton imgSrc={lineIconButton}/>
-        <WorkButton imgSrc={flaticonButton}/>
-        <WorkButton imgSrc={spacesquirrelButton}/>
-        <WorkButton imgSrc={cadButton}/>
+        <WorkButton imgSrc={lineIconButton} hoverSrc={lineIconButtonHover}/>
+        <WorkButton imgSrc={flaticonButton} hoverSrc={flaticonButtonHover}/>
+        <WorkButton imgSrc={spacesquirrelButton} hoverSrc={spacesquirrelButtonHover}/>
+        <WorkButton imgSrc={cadButton} hoverSrc={cadButtonHover}/>
       </ButtonSection>
     </Container>
   );
