@@ -21,8 +21,9 @@ import unityButton from '../../images/WorkButtons/Unity3DButton.png';
 import unityButtonHover from '../../images/WorkButtons/Unity3DButtonHover.png';
 import processingButton from '../../images/WorkButtons/ProcessingButton.png';
 import processingButtonHover from '../../images/WorkButtons/ProcessingButtonHover.png';
-
+import footer from '../../images/Landing/Footer.png'
 import WorkButton from '../../components/WorkButton';
+import colors from '../../components/Colors';
 
 
 const Container = styled.div`
@@ -37,6 +38,14 @@ const Header = styled.h1`
   flex: 1;
   text-align: center;
   font-size: 1.2em;
+`;
+
+const Footer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justifyContent: center;
+  alignItems: center;
+  padding-right: 3%;
 `;
 
 const ButtonSection = styled.div`
@@ -81,6 +90,10 @@ export default function DevWork() {
         <WorkButton imgSrc={unityButton} hoverSrc={unityButtonHover}/>
         <WorkButton imgSrc={processingButton} hoverSrc={processingButtonHover}/>
       </ButtonSection>
+      <Footer style={{backgroundColor: colors.grey}}>
+        <SectionImage src={footer}/>
+      </Footer>
     </Container>
+
   );
 }

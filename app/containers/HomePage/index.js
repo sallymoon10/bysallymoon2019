@@ -11,10 +11,16 @@ import colors from '../../components/Colors';
 import NavBar from '../../components/NavBar';
 import {Link } from "react-router-dom";
 
+import intro from '../../images/Landing/Intro.png'
+import aiLanding from '../../images/Landing/AILandingSection.png'
+import codeLanding from '../../images/Landing/CodeLandingSection.png'
+import designLanding from '../../images/Landing/DesignLandingSection.png'
+import letsWork from '../../images/Landing/LetsWork.png'
+import footer from '../../images/Landing/Footer.png'
+
 import ViewResumeButton from '../../images/Buttons/ViewResumeButton.png';
 import ViewWorkButton from '../../images/Buttons/ViewWorkButton.png';
 import ViewContactButton from '../../images/Buttons/ViewContactButton.png';
-
 
 const Container = styled.div`
   width: 100%;
@@ -100,10 +106,10 @@ class HomePage extends React.Component {
       <Container>
         <NavBar />
         <Section style={{backgroundColor: colors.white}}>
-          <Image src={require('../../images/Landing/Intro.png')}/>
+          <Image src={intro}/>
         </Section>
         <Section style={{backgroundColor: colors.red}}>
-          <SectionImage src={require('../../images/Landing/AILandingSection.png')}/>
+          <SectionImage src={aiLanding}/>
           <RightButton style={{backgroundColor: 'transparent'}}>
             <Link to="/resumé">
               <ButtonImage src={ViewResumeButton}
@@ -114,7 +120,7 @@ class HomePage extends React.Component {
           </RightButton>
         </Section>
         <Section style={{backgroundColor: colors.blue}}>
-          <SectionImage src={require('../../images/Landing/CodeLandingSection.png')}/>
+          <SectionImage src={codeLanding}/>
           <LeftButton style={{backgroundColor: 'transparent'}}>
             <Link to="/devwork">
               <ButtonImage src={ViewWorkButton}
@@ -125,7 +131,7 @@ class HomePage extends React.Component {
           </LeftButton>
         </Section>
         <Section style={{backgroundColor: colors.red}}>
-          <SectionImage src={require('../../images/Landing/DesignLandingSection.png')}/>
+          <SectionImage src={designLanding}/>
           <RightButton style={{backgroundColor: 'transparent'}}>
             <Link to="/designwork">
               <ButtonImage src={ViewWorkButton}
@@ -136,7 +142,7 @@ class HomePage extends React.Component {
           </RightButton>
         </Section>
         <Section style={{backgroundColor: colors.white}}>
-          <SectionImage src={require('../../images/Landing/LetsWork.png')}/>
+          <SectionImage src={letsWork}/>
           <CenterButton style={{backgroundColor: 'transparent'}}>
             <Link to="/contacts">
               <ButtonImage src={ViewContactButton}
@@ -147,7 +153,7 @@ class HomePage extends React.Component {
           </CenterButton>
         </Section>
         <Footer style={{backgroundColor: colors.grey}}>
-          <SectionImage src={require('../../images/Landing/Footer.png')}/>
+          <SectionImage src={footer}/>
         </Footer>
       </Container>
     );
