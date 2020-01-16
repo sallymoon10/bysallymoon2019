@@ -1,5 +1,5 @@
 /*
- * Dev work page
+ * Design work page
  */
 
 import React from 'react';
@@ -21,17 +21,16 @@ import unityButton from '../../images/WorkButtons/Unity3DButton.png';
 import unityButtonHover from '../../images/WorkButtons/Unity3DButtonHover.png';
 import processingButton from '../../images/WorkButtons/ProcessingButton.png';
 import processingButtonHover from '../../images/WorkButtons/ProcessingButtonHover.png';
-import footer from '../../images/Landing/Footer.png'
+import footer from '../../images/Landing/Footer.png';
 import WorkButton from '../../components/WorkButton';
 import colors from '../../components/Colors';
-
 
 const Container = styled.div`
   width: 100%;
 `;
 
 const Gap = styled.div`
-  padding-top:5%;
+  padding-top: 5%;
 `;
 
 const Header = styled.h1`
@@ -40,60 +39,70 @@ const Header = styled.h1`
   font-size: 1.2em;
 `;
 
-const Footer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justifyContent: center;
-  alignItems: center;
-  padding-right: 3%;
-`;
-
 const ButtonSection = styled.div`
   display: flex;
   flex-direction: row;
-  justifyContent: center;
-  alignItems: center;
+  justifycontent: center;
+  alignitems: center;
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 5%;
   padding-top: 5%;
 `;
 
+const SectionImage = styled.img`
+  width: 80%;
+  height: 80%;
+  flex: 1;
+`;
+
+const Footer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justifycontent: center;
+  alignitems: center;
+  padding-right: 3%;
+`;
 
 export default function DevWork() {
   return (
     <Container>
-      <NavBar devState={true}/>
-      <Gap></Gap>
-      <Header>
-        Machine Learning / AI
-      </Header>
+      <NavBar devState />
+      <Gap />
+      <Header>Machine Learning / AI</Header>
       <ButtonSection>
-        <WorkButton imgSrc={resnetButton} hoverSrc={resnetButtonHover}/>
-        <WorkButton imgSrc={imageClassificationButton} hoverSrc={imageClassificationButtonHover}/>
-        <WorkButton imgSrc={matlabButton} hoverSrc={matlabButtonHover}/>
+        <WorkButton imgSrc={resnetButton} hoverSrc={resnetButtonHover} />
+        <WorkButton
+          imgSrc={imageClassificationButton}
+          hoverSrc={imageClassificationButtonHover}
+        />
+        <WorkButton imgSrc={matlabButton} hoverSrc={matlabButtonHover} />
       </ButtonSection>
 
-      <Header>
-        Mobile  & Web Apps
-      </Header>
+      <Header>Mobile & Web Apps</Header>
       <ButtonSection>
-        <WorkButton imgSrc={reactNativeButton} hoverSrc={reactNativeButtonHover}/>
-        <WorkButton imgSrc={heatmapButton} hoverSrc={heatmapButtonHover}/>
-        <WorkButton imgSrc={abStandardsButton} hoverSrc={abStandardsButtonHover}/>
+        <WorkButton
+          imgSrc={reactNativeButton}
+          hoverSrc={reactNativeButtonHover}
+        />
+        <WorkButton imgSrc={heatmapButton} hoverSrc={heatmapButtonHover} />
+        <WorkButton
+          imgSrc={abStandardsButton}
+          hoverSrc={abStandardsButtonHover}
+        />
       </ButtonSection>
 
-      <Header>
-        Games
-      </Header>
+      <Header>Games</Header>
       <ButtonSection>
-        <WorkButton imgSrc={unityButton} hoverSrc={unityButtonHover}/>
-        <WorkButton imgSrc={processingButton} hoverSrc={processingButtonHover}/>
+        <WorkButton imgSrc={unityButton} hoverSrc={unityButtonHover} />
+        <WorkButton
+          imgSrc={processingButton}
+          hoverSrc={processingButtonHover}
+        />
       </ButtonSection>
-      <Footer style={{backgroundColor: colors.grey}}>
-        <SectionImage src={footer}/>
+      <Footer style={{ backgroundColor: colors.grey }}>
+        <SectionImage src={footer} />
       </Footer>
     </Container>
-
   );
 }

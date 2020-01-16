@@ -25,7 +25,7 @@ const Container = styled.div`
 `;
 
 const Gap = styled.div`
-  padding-top:5%;
+  padding-top: 5%;
 `;
 
 const Header = styled.h1`
@@ -37,35 +37,34 @@ const Header = styled.h1`
 const ButtonSection = styled.div`
   display: flex;
   flex-direction: row;
-  justifyContent: center;
-  alignItems: center;
+  justifycontent: center;
+  alignitems: center;
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 5%;
   padding-top: 5%;
 `;
 
-export default function DevWork() {
+export default function DesignWork() {
   return (
     <Container>
-      <NavBar designState={true}/>
-      <Gap></Gap>
-      <Header>
-        User Interface / UX designs
-      </Header>
+      <NavBar designState />
+      <Gap />
+      <Header>User Interface / UX designs</Header>
       <ButtonSection>
-        <WorkButton imgSrc={couerButton} hoverSrc={couerButtonHover}/>
-        <WorkButton imgSrc={blueteamButton} hoverSrc={blueteamButtonHover}/>
+        <WorkButton imgSrc={couerButton} hoverSrc={couerButtonHover} />
+        <WorkButton imgSrc={blueteamButton} hoverSrc={blueteamButtonHover} />
       </ButtonSection>
 
-      <Header>
-        2D Illustrations / 3D assets
-      </Header>
+      <Header>2D Illustrations / 3D assets</Header>
       <ButtonSection>
-        <WorkButton imgSrc={lineIconButton} hoverSrc={lineIconButtonHover}/>
-        <WorkButton imgSrc={flaticonButton} hoverSrc={flaticonButtonHover}/>
-        <WorkButton imgSrc={spacesquirrelButton} hoverSrc={spacesquirrelButtonHover}/>
-        <WorkButton imgSrc={cadButton} hoverSrc={cadButtonHover}/>
+        <WorkButton imgSrc={lineIconButton} hoverSrc={lineIconButtonHover} />
+        <WorkButton imgSrc={flaticonButton} hoverSrc={flaticonButtonHover} />
+        <WorkButton
+          imgSrc={spacesquirrelButton}
+          hoverSrc={spacesquirrelButtonHover}
+        />
+        <WorkButton imgSrc={cadButton} hoverSrc={cadButtonHover} />
       </ButtonSection>
     </Container>
   );
