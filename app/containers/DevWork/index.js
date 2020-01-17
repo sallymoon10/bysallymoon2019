@@ -25,9 +25,6 @@ import footer from '../../images/Landing/Footer.png';
 import WorkButton from '../../components/WorkButton';
 import colors from '../../components/Colors';
 
-import WorkModal from '../../components/WorkModal';
-
-
 const Container = styled.div`
   width: 100%;
 `;
@@ -72,8 +69,6 @@ export default function DevWork() {
     <Container>
       <NavBar devState />
       <Gap />
-
-      <WorkModal/>
 
       <Header>Machine Learning / AI</Header>
       <ButtonSection>
