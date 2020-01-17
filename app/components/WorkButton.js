@@ -2,9 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Modal from 'react-responsive-modal';
 
-import CouerImage1 from '../images/WorkImages/CouerImage1.png'
-import CouerImage2 from '../images/WorkImages/CouerImage2.png'
-
 const Button = styled.button`
   border: none;
   outline: none;
@@ -40,6 +37,7 @@ const Section = styled.div`
 `;
 
 const PictureSection = styled.div`
+  margin-top:2%;
   flex: 0.35;
   justify-content: center;
   align-items: center;
@@ -52,8 +50,8 @@ const ContentSection = styled.div`
 const PictureContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Picture = styled.img`
@@ -120,8 +118,8 @@ class WorkButton extends React.Component {
           <Section>
             <PictureSection>
               <PictureContainer>
-                <Picture src ={CouerImage1}/>
-                <Picture src ={CouerImage2}/>
+                <Picture src ={this.props.img1Src}/>
+                <Picture src ={this.props.img2Src}/>
               </PictureContainer>
             </PictureSection>
             <ContentSection>
@@ -133,6 +131,8 @@ class WorkButton extends React.Component {
               <Content>{this.props.features}</Content>
               <SubHeader>Tools used:</SubHeader>
               <Content>{this.props.tools}</Content>
+              <SubHeader>Affiliation:</SubHeader>
+              <Content>{this.props.affil}</Content>
             </ContentSection>
           </Section>
         </Modal>
