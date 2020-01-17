@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Modal from 'react-responsive-modal';
 
 const Button = styled.button`
-  border:none;
+  border: none;
 `;
 
 const Container = styled.div`
@@ -16,14 +16,13 @@ const ButtonImage = styled.img`
 `;
 
 const Header = styled.h1`
-  font-size:1.2em;
+  font-size: 1.2em;
 `;
-
 
 class WorkButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {hover: false, open: false};
+    this.state = { hover: false, open: false };
   }
 
   onOpenModal = () => {
@@ -37,32 +36,39 @@ class WorkButton extends React.Component {
   render() {
     let button;
 
-    if (this.state.hover){
-      button =
+    if (this.state.hover) {
+      button = (
         <ButtonImage
           src={this.props.hoverSrc}
-          onMouseOut={() => this.setState({hover: false})}
-          onMouseOver={() => this.setState({hover: true})}
+          onMouseOut={() => this.setState({ hover: false })}
+          onMouseOver={() => this.setState({ hover: true })}
           onClick={this.onOpenModal}
-          style={{transform: `${this.state.hover ? 'scale(1.05,1.05)' : 'scale(1,1)'}`}}>
-        </ButtonImage>;
-    }
-    else{
-      button =
+          style={{
+            transform: `${
+              this.state.hover ? 'scale(1.05,1.05)' : 'scale(1,1)'
+            }`,
+          }}
+        />
+      );
+    } else {
+      button = (
         <ButtonImage
           src={this.props.imgSrc}
           onClick={this.onOpenModal}
-          onMouseOut={() => this.setState({hover: false})}
-          onMouseOver={() => this.setState({hover: true})}
+          onMouseOut={() => this.setState({ hover: false })}
+          onMouseOver={() => this.setState({ hover: true })}
           onClick={this.onOpenModal}
-          style={{transform: `${this.state.hover ? 'scale(1.05,1.05)' : 'scale(1,1)'}`}}>
-        </ButtonImage>;
+          style={{
+            transform: `${
+              this.state.hover ? 'scale(1.05,1.05)' : 'scale(1,1)'
+            }`,
+          }}
+        />
+      );
     }
     return (
       <Container>
-        <Button style={{backgroundColor: 'transparent'}}>
-          {button}
-        </Button>
+        <Button style={{ backgroundColor: 'transparent' }}>{button}</Button>
         <Modal open={this.state.open} onClose={this.onCloseModal}>
           <h2>Simple centered modal</h2>
           <p>
@@ -72,9 +78,8 @@ class WorkButton extends React.Component {
           </p>
         </Modal>
       </Container>
-
-      );
+    );
   }
 }
 
-export default WorkButton
+export default WorkButton;
