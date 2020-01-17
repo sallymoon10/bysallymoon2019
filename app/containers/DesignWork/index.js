@@ -32,6 +32,7 @@ const Header = styled.h1`
   flex: 1;
   text-align: center;
   font-size: 1.2em;
+  font-weight:300;
 `;
 
 const ButtonSection = styled.div`

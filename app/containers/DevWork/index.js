@@ -36,6 +36,7 @@ const Gap = styled.div`
 const Header = styled.h1`
   flex: 1;
   text-align: center;
+  font-weight:300;
   font-size: 1.2em;
 `;
 
@@ -64,6 +65,13 @@ const Footer = styled.div`
   padding-right: 3%;
 `;
 
+const resnetInfo = {
+  header: 'Couer: Blood Pressure Tracking iOS app',
+  desc: 'User-interface for a blood pressure tracking iOS app.',
+  features: 'User dashboard to graphically track progress and set personal goals for regular blood pressure monitoring.',
+  tools: 'Figma, Adobe Illustrator.'
+};
+
 export default function DevWork() {
   return (
     <Container>
@@ -71,8 +79,16 @@ export default function DevWork() {
       <Gap />
 
       <Header>Machine Learning / AI</Header>
+
       <ButtonSection>
-        <WorkButton imgSrc={resnetButton} hoverSrc={resnetButtonHover} />
+        <WorkButton
+          imgSrc={resnetButton}
+          hoverSrc={resnetButtonHover}
+          header={resnetInfo.header}
+          desc={resnetInfo.desc}
+          features={resnetInfo.features}
+          tools = {resnetInfo.tools}/>
+
         <WorkButton
           imgSrc={imageClassificationButton}
           hoverSrc={imageClassificationButtonHover}
@@ -81,6 +97,7 @@ export default function DevWork() {
       </ButtonSection>
 
       <Header>Mobile & Web Apps</Header>
+
       <ButtonSection>
         <WorkButton
           imgSrc={reactNativeButton}
