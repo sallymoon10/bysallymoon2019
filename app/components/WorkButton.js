@@ -18,7 +18,7 @@ const ButtonImage = styled.img`
 
 const Header = styled.h1`
   font-size: 1.5em;
-  font-weight:300;
+  font-weight: 300;
 `;
 
 const SubHeader = styled.h4`
@@ -28,7 +28,7 @@ const SubHeader = styled.h4`
 
 const Content = styled.text`
   font-size: 1em;
-  font-weight:300;
+  font-weight: 300;
 `;
 
 const Section = styled.div`
@@ -37,7 +37,7 @@ const Section = styled.div`
 `;
 
 const PictureSection = styled.div`
-  margin-top:2%;
+  margin-top: 2%;
   flex: 0.35;
   justify-content: center;
   align-items: center;
@@ -58,11 +58,9 @@ const Picture = styled.img`
   flex: 0.4;
   width: 80%;
   height: 70%;
-  margin:2%;
+  margin: 2%;
   align-self: start;
 `;
-
-
 
 class WorkButton extends React.Component {
   constructor(props) {
@@ -114,17 +112,16 @@ class WorkButton extends React.Component {
       <Container>
         <Button style={{ backgroundColor: 'transparent' }}>{button}</Button>
         <Modal open={this.state.open} onClose={this.onCloseModal}>
-
           <Section>
             <PictureSection>
               <PictureContainer>
-                <Picture src ={this.props.img1Src}/>
-                <Picture src ={this.props.img2Src}/>
+                <Picture src={this.props.img1Src} />
+                <Picture src={this.props.img2Src} />
               </PictureContainer>
             </PictureSection>
             <ContentSection>
               <Header>{this.props.header}</Header>
-              <hr/>
+              <hr />
               <SubHeader>Project description:</SubHeader>
               <Content>{this.props.desc}</Content>
               <SubHeader>Key features:</SubHeader>
