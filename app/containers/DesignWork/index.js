@@ -64,7 +64,7 @@ const couerInfo = {
   features:
     'User dashboard to graphically track progress and set personal goals for regular blood pressure monitoring',
   tools: 'Figma, Adobe Illustrator',
-  affil: 'University of Waterloo, 4th Year Capstone Project',
+  affil: 'University of Waterloo, 4th Year Capstone Project'
 };
 
 const blueteamInfo = {
@@ -72,7 +72,7 @@ const blueteamInfo = {
   desc: 'Re-design of CI-Technologies’ flagship project- Blueteam',
   features: 'Dark mode for added discreteness, components resize to scale',
   tools: 'HTML, Javascript, Bootstrap',
-  affil: 'CI-Technologies, Internship',
+  affil: 'CI-Technologies, Internship'
 };
 
 const lineIconInfo = {
@@ -80,7 +80,7 @@ const lineIconInfo = {
   desc: 'Minimalistic icon pack for mobile and web projects',
   features: 'Simple and intuitive design',
   tools: 'Procreate',
-  affil: 'Personal project',
+  affil: 'Personal project'
 };
 
 const flatIconInfo = {
@@ -89,7 +89,7 @@ const flatIconInfo = {
     'Colorful 2D icons / illustrations for mobile and web apps, infographics, etc.',
   features: 'Simple and intuitive design',
   tools: 'Procreate, Adobe Illustrator',
-  affil: 'Braze Mobility (Infographic), Internship',
+  affil: 'Braze Mobility (Infographic), Internship'
 };
 
 const spacesquirrelInfo = {
@@ -99,7 +99,7 @@ const spacesquirrelInfo = {
   features:
     'Low-poly and colorful 3D assets to encourage grandparents and grandchildren to play together',
   tools: 'Blender',
-  affil: 'IATSL (Intelligent Assistive Technology and Systems), Internship',
+  affil: 'IATSL (Intelligent Assistive Technology and Systems), Internship'
 };
 
 const cadInfo = {
@@ -109,7 +109,7 @@ const cadInfo = {
   features:
     'MRI coils can be protoytped onto the shell, making protyping and testing more efficient and effective.',
   tools: 'SolidWorks',
-  affil: 'University of Alberta, Internship',
+  affil: 'University of Alberta, Internship'
 };
 
 export default function DesignWork() {
