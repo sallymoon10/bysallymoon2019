@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Modal from 'react-responsive-modal';
+import colors from './Colors';
 
 const Button = styled.button`
   border: none;
@@ -122,6 +123,7 @@ class WorkButton extends React.Component {
             <ContentSection>
               <Header>{this.props.header}</Header>
               <hr />
+              <a href = {this.props.link} target="_blank"><Content style={{ color: colors.blue }}>{this.props.linkTitle}</Content></a>
               <SubHeader>Project description:</SubHeader>
               <Content>{this.props.desc}</Content>
               <SubHeader>Key features:</SubHeader>

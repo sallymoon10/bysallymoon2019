@@ -35,6 +35,19 @@ import processingButton from '../../images/WorkButtons/ProcessingButton.png';
 import processingButtonHover from '../../images/WorkButtons/ProcessingButtonHover.png';
 import processingImage1 from '../../images/WorkImages/processingImage1.png';
 import processingImage2 from '../../images/WorkImages/processingImage2.png';
+import mimicButton from '../../images/WorkButtons/MimicButton.png';
+import mimicButtonHover from '../../images/WorkButtons/MimicButtonHover.png';
+import mimicImage1 from '../../images/WorkImages/mimicImage1.png';
+import msBertButton from '../../images/WorkButtons/MsbertButton.png';
+import msBertButtonHover from '../../images/WorkButtons/MsbertButtonHover.png';
+import msBertImage1 from '../../images/WorkImages/MsbertImage1.png';
+import allenNLPButton from '../../images/WorkButtons/AllennlpButton.png';
+import allenNLPButtonHover from '../../images/WorkButtons/AllennlpButtonHover.png';
+import allenNLPImage1 from '../../images/WorkImages/AllenNLPImage1.png';
+import snorkelButton from '../../images/WorkButtons/SnorkelButton.png';
+import snorkelButtonHover from '../../images/WorkButtons/SnorkelButtonHover.png';
+import snorkelImage1 from '../../images/WorkImages/SnorkelImage1.png';
+
 import footer from '../../images/Landing/Footer.png';
 import WorkButton from '../../components/WorkButton';
 import colors from '../../components/Colors';
@@ -52,6 +65,8 @@ const Header = styled.h1`
   text-align: center;
   font-weight:300;
   font-size: 1.2em;
+  padding-bottom: 5%;
+  padding-top: 2%;
 `;
 
 const ButtonSection = styled.div`
@@ -61,8 +76,8 @@ const ButtonSection = styled.div`
   alignitems: center;
   padding-left: 10%;
   padding-right: 10%;
-  padding-bottom: 5%;
-  padding-top: 5%;
+  padding-bottom: 2%;
+  padding-top: 2%;
 `;
 
 const SectionImage = styled.img`
@@ -79,8 +94,44 @@ const Footer = styled.div`
   padding-right: 3%;
 `;
 
+const mimicInfo = {
+  header: 'NLP model to predict ICU mortality given clinical data (MIMIC III)',
+  desc: 'Developed TFIDF representations of clinical notes present in MIMIC III to predict ICU mortality. Analyzed fairness (parity gap, recall gap, specificity gap) based on gender.',
+  features: 'Achieved ~87% AUC score in predicting ICU mortality.',
+  tools: 'Python, SkLearn (nltk, CountVectorizer, TfidfTransformer, LogisticRegression), Pandas, Numpy',
+  affil: 'University of Toronto, CSC2541 (Machine Learning for Healthcare). Note: code could not be published due to restrictions set by the course instructors. '
+};
+
+const msbertInfo = {
+  header: 'MS-BERT: pre-trained language model for clinical NLP ',
+  link:'https://huggingface.co/NLP4H/ms_bert',
+  linkTitle:'Model download',
+  desc: 'MS-BERT is a contextual language model built upon Blue-BERT (NCBI BERT). It was further pretrained on ~70k clinical examination notes from Multiple Sclerosis clinic at St. Michael’s Hospital.',
+  features: 'MS-BERT is optimized for clinical NLP tasks, particularly those pertaining to multiple sclerosis. MS-BERT is published for research and commercial use and has 500+ downloads to date. ',
+  tools: 'HuggingFace Transformers, Blue-BERT',
+  affil: 'NLP4H (Organization), St. Michael’s Hospital, University of Toronto (Dr. Marzyeh).'
+};
+
+const allenNLPInfo = {
+  header: 'NLP model built with AllenNLP to predict MS severity from clinical text',
+  desc: 'An NLP model that predicts EDSS (Expanded disability status scale), MS subtype, recent and future relapse given a patient’s clinical examination note. The clinical text was embedded into token id’s using the MS-BERT language model. ',
+  features: 'Significantly outperformed baseline (Word2Vec) classifiers on all prediction tasks, delivering state-of-the-art results. ',
+  tools: 'Allen-NLP, MS-BERT, HuggingFace Transformers',
+  affil: 'NLP4H (Organization), St. Michael’s Hospital, University of Toronto (Dr. Marzyeh).'
+};
+
+const snorkelInfo = {
+  header: 'Semi-supervised labelling of neurology examination notes using Snorkel',
+  desc: 'A Snorkel pipeline to label raw neurology examination notes based on MS severity types (EDSS, functional subscores, etc). Implemented various labelling functions such as regex-based keyword searches and a CNN model trained on manual labelled data.',
+  features: 'Labelled ~70k neurology notes,  significantly increasing the amount of training data available. The performance of the classifier trained on Snorkel-labelled data (weighted  F1: 0.91) was comparable to the performance of the classifier trained on manual-labelled data (weighted F1: 0.94), and therefore proved its potential to replace expensive manual labelling processes. ',
+  tools: 'Snorkel',
+  affil: 'NLP4H (Organization), St. Michael’s Hospital, University of Toronto (Dr. Marzyeh).'
+};
+
 const resnetInfo = {
   header: 'CNN transfer learning model for medical image classification',
+  link: 'https://github.com/sallymoon10/ResnetImageClassification',
+  linkTitle: 'Github repo',
   desc: 'CNN model implemented with transfer learning (ResNet 50) that classifies medical images with categorical labels. The model obtained highest accuracy for the kaggle challenge with f-score of 1.0. ',
   features: 'Key components of the model included: weight initialization with ImageNet, pooling with GlobalAveragePooling2D, dropout of 0.7, and optimizing with the Adam optimizer. ',
   tools: 'Google colab, Python, Keras, Sklearn, Pandas, Resnet50',
@@ -89,6 +140,8 @@ const resnetInfo = {
 
 const imageClassificationInfo = {
   header: 'Unsupervised clustering algorithms for image classification',
+  link: 'https://github.com/sallymoon10/Image-Classification',
+  linkTitle: 'Github repo',
   desc: 'MICD / K-means algorithm to classify 10 types of textures images.',
   features: 'Determined how pixels are classified by using color maps and evaluated the probability of error and construct confusion matrices for each method.',
   tools: 'Matlab',
@@ -97,6 +150,8 @@ const imageClassificationInfo = {
 
 const earModelInfo = {
   header: 'Hearing mechanism simulation algorithm',
+  link: 'https://github.com/sallymoon10/Cochlear-Ear-Mechanics-Model-Simulation',
+  linkTitle: 'Github repo',
   desc: 'Modelling cochlear mechanics state-space model on Matlab. Modelled hearing by evaluating statpes displacements at various pressure levels.',
   features: 'Simulated how otosclerosis affects hearing by simulating ear models with various severities of otosclerosis.',
   tools: 'Matlab',
@@ -108,7 +163,7 @@ const reactNativeInfo = {
   desc: 'An android / iOS mobile app to train powered wheelchair users to navigate tight spaces with the Braze Sentina wheelchair sensors',
   features: 'Implemented calibration system to test out output signals (light, vibration, sound) of the Braze Sentina. Trains users to use signals to drive safely in a variety of tight navigation scenarios. ',
   tools: 'React Native',
-  affil: 'Braze Mobility, Internship'
+  affil: 'Braze Mobility, Internship. Note: code could not be publicized due to restrictions.'
 };
 
 const heatmapInfo = {
@@ -116,7 +171,7 @@ const heatmapInfo = {
   desc: 'A feature for EI Pro that visualizes which body parts police officers targetting during arrest and conflict',
   features: 'Allows governing bodies to determine whether police officers are using force in safe areas',
   tools: 'Javascript, Heatmap.js, JSON',
-  affil: 'CI Technologies, Internship'
+  affil: 'CI Technologies, Internship. Note: code could not be publicized due to restrictions.'
 };
 
 const abstandardsInfo = {
@@ -124,7 +179,7 @@ const abstandardsInfo = {
   desc: 'A web application that generates professional reports with visual graphs and data tables for police incidents.',
   features: 'Allows you to custom define your search parameters. Both front-end and back-end implementation was developed throughout the duration of the internship.',
   tools: 'Java, Javascript, HTML, Chart.js',
-  affil: 'CI Technologies, Internship'
+  affil: 'CI Technologies, Internship. Note: code could not be publicized due to restrictions.'
 };
 
 const unityInfo = {
@@ -132,7 +187,7 @@ const unityInfo = {
   desc: 'A multi-touch screen game that helps prevents onset of dementia with cognitively stimulating games. Allows multiple users to explore new plants as squirrel characters and unlock new regions by playing games. ',
   features: 'Fun and intuitive game play allows grandchildren and grandparents to play together and bond, motivating participation from seniors. ',
   tools: 'Unity 3D, Blender, Multitouch Digital  ',
-  affil: 'IATSL (Intelligent Assistive Technology and Systems), Internship'
+  affil: 'IATSL (Intelligent Assistive Technology and Systems), Internship. Note: code could not be publicized due to restrictions.'
 };
 
 const processingInfo = {
@@ -140,7 +195,7 @@ const processingInfo = {
   desc: 'Collaborative & fun game design that accomodates children with cerebral palsy. Players launch into outer space to save space cows. ',
   features: 'Adaptive controller design and team-oriented game play that accomodates for physical and intellectual disabilities.',
   tools: 'Processing, Arduino (accelerometer, buttons, potentiometer, sliders), Adobe Illustrator',
-  affil: 'University of Waterloo, 3rd Year design project '
+  affil: 'University of Waterloo, 3rd Year design project.'
 };
 
 
@@ -154,10 +209,58 @@ export default function DevWork() {
 
       <ButtonSection>
         <WorkButton
+          imgSrc={msBertButton}
+          hoverSrc={msBertButtonHover}
+          img1Src={msBertImage1}
+          link={msbertInfo.link}
+          linkTitle={msbertInfo.linkTitle}
+          header={msbertInfo.header}
+          desc={msbertInfo.desc}
+          features={msbertInfo.features}
+          tools={msbertInfo.tools}
+          affil={msbertInfo.affil}
+        />
+
+        <WorkButton
+        imgSrc={allenNLPButton}
+        hoverSrc={allenNLPButtonHover}
+        img1Src={allenNLPImage1}
+        header={allenNLPInfo.header}
+        desc={allenNLPInfo.desc}
+        features={allenNLPInfo.features}
+        tools={allenNLPInfo.tools}
+        affil={allenNLPInfo.affil}
+        />
+
+        <WorkButton
+          imgSrc={snorkelButton}
+          hoverSrc={snorkelButtonHover}
+          img1Src={snorkelImage1}
+          header={snorkelInfo.header}
+          desc={snorkelInfo.desc}
+          features={snorkelInfo.features}
+          tools={snorkelInfo.tools}
+          affil={snorkelInfo.affil}
+        />
+
+        <WorkButton
+          imgSrc={mimicButton}
+          hoverSrc={mimicButtonHover}
+          img1Src={mimicImage1}
+          header={mimicInfo.header}
+          desc={mimicInfo.desc}
+          features={mimicInfo.features}
+          tools={mimicInfo.tools}
+          affil={mimicInfo.affil}
+        />
+
+        <WorkButton
           imgSrc={resnetButton}
           hoverSrc={resnetButtonHover}
           img1Src={resnetImage1}
           img2Src={resnetImage2}
+          link={resnetInfo.link}
+          linkTitle={resnetInfo.linkTitle}
           header={resnetInfo.header}
           desc={resnetInfo.desc}
           features={resnetInfo.features}
@@ -165,11 +268,17 @@ export default function DevWork() {
           affil={resnetInfo.affil}
         />
 
+      </ButtonSection>
+
+      <ButtonSection>
+
         <WorkButton
           imgSrc={imageClassificationButton}
           hoverSrc={imageClassificationButtonHover}
           img1Src={imageClassificationImage1}
           img2Src={imageClassificationImage2}
+          link={imageClassificationInfo.link}
+          linkTitle={imageClassificationInfo.linkTitle}
           header={imageClassificationInfo.header}
           desc={imageClassificationInfo.desc}
           features={imageClassificationInfo.features}
@@ -181,6 +290,8 @@ export default function DevWork() {
           imgSrc={earModelButton}
           hoverSrc={earModelButtonHover}
           img1Src={earModelImage1}
+          link={earModelInfo.link}
+          linkTitle={earModelInfo.linkTitle}
           header={earModelInfo.header}
           desc={earModelInfo.desc}
           features={earModelInfo.features}

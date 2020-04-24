@@ -31,8 +31,8 @@ const Section = styled.div`
   flex-direction: row;
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   justifyContent: center;
   alignItems: center;
 `;
@@ -111,11 +111,11 @@ class HomePage extends React.Component {
         <Section style={{backgroundColor: colors.red}}>
           <SectionImage src={aiLanding}/>
           <RightButton style={{backgroundColor: 'transparent'}}>
-            <Link to="/resumé">
-              <ButtonImage src={ViewResumeButton}
-                           onMouseOut={() => this.setState({resumeButtonHover: false})}
-                           onMouseOver={() => this.setState({resumeButtonHover: true})}
-                           style={{transform: `${this.state.resumeButtonHover ? 'scale(1.05,1.05)' : 'scale(1,1)'}`}}/>
+            <Link to="/devwork">
+              <ButtonImage src={ViewWorkButton}
+                           onMouseOut={() => this.setState({devWorkButtonHover: false})}
+                           onMouseOver={() => this.setState({devWorkButtonHover: true})}
+                           style={{transform: `${this.state.devWorkButtonHover ? 'scale(1.05,1.05)' : 'scale(1,1)'}`}}/>
             </Link>
           </RightButton>
         </Section>
