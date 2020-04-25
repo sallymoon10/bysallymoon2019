@@ -63,7 +63,7 @@ const Gap = styled.div`
 const Header = styled.h1`
   flex: 1;
   text-align: center;
-  font-weight:300;
+  font-weight: 300;
   font-size: 1.2em;
   padding-bottom: 5%;
   padding-top: 2%;
@@ -96,46 +96,63 @@ const Footer = styled.div`
 
 const mimicInfo = {
   header: 'NLP model to predict ICU mortality given clinical data (MIMIC III)',
-  desc: 'Developed TFIDF representations of clinical notes present in MIMIC III to predict ICU mortality. Analyzed fairness (parity gap, recall gap, specificity gap) based on gender.',
+  desc:
+    'Developed TFIDF representations of clinical notes present in MIMIC III to predict ICU mortality. Analyzed fairness (parity gap, recall gap, specificity gap) based on gender.',
   features: 'Achieved ~87% AUC score in predicting ICU mortality.',
-  tools: 'Python, SkLearn (nltk, CountVectorizer, TfidfTransformer, LogisticRegression), Pandas, Numpy',
-  affil: 'University of Toronto, CSC2541 (Machine Learning for Healthcare). Note: code could not be published due to restrictions set by the course instructors. '
+  tools:
+    'Python, SkLearn (nltk, CountVectorizer, TfidfTransformer, LogisticRegression), Pandas, Numpy',
+  affil:
+    'University of Toronto, CSC2541 (Machine Learning for Healthcare). Note: code could not be published due to restrictions set by the course instructors. ',
 };
 
 const msbertInfo = {
   header: 'MS-BERT: pre-trained language model for clinical NLP ',
-  link:'https://huggingface.co/NLP4H/ms_bert',
-  linkTitle:'Model download',
-  desc: 'MS-BERT is a contextual language model built upon Blue-BERT (NCBI BERT). It was further pretrained on ~70k clinical examination notes from Multiple Sclerosis clinic at St. Michael’s Hospital.',
-  features: 'MS-BERT is optimized for clinical NLP tasks, particularly those pertaining to multiple sclerosis. MS-BERT is published for research and commercial use and has 500+ downloads to date. ',
+  link: 'https://huggingface.co/NLP4H/ms_bert',
+  linkTitle: 'Model download',
+  desc:
+    'MS-BERT is a contextual language model built upon Blue-BERT (NCBI BERT). It was further pretrained on ~70k clinical examination notes from Multiple Sclerosis clinic at St. Michael’s Hospital.',
+  features:
+    'MS-BERT is optimized for clinical NLP tasks, particularly those pertaining to multiple sclerosis. MS-BERT is published for research and commercial use and has 500+ downloads to date. ',
   tools: 'HuggingFace Transformers, Blue-BERT',
-  affil: 'NLP4H (Organization), St. Michael’s Hospital, University of Toronto (Dr. Marzyeh).'
+  affil:
+    'NLP4H (Organization), St. Michael’s Hospital, University of Toronto (Dr. Marzyeh).',
 };
 
 const allenNLPInfo = {
-  header: 'NLP model built with AllenNLP to predict MS severity from clinical text',
-  desc: 'An NLP model that predicts EDSS (Expanded disability status scale), MS subtype, recent and future relapse given a patient’s clinical examination note. The clinical text was embedded into token id’s using the MS-BERT language model. ',
-  features: 'Significantly outperformed baseline (Word2Vec) classifiers on all prediction tasks, delivering state-of-the-art results. ',
+  header:
+    'NLP model built with AllenNLP to predict MS severity from clinical text',
+  desc:
+    'An NLP model that predicts EDSS (Expanded disability status scale), MS subtype, recent and future relapse given a patient’s clinical examination note. The clinical text was embedded into token id’s using the MS-BERT language model. ',
+  features:
+    'Significantly outperformed baseline (Word2Vec) classifiers on all prediction tasks, delivering state-of-the-art results. ',
   tools: 'Allen-NLP, MS-BERT, HuggingFace Transformers',
-  affil: 'NLP4H (Organization), St. Michael’s Hospital, University of Toronto (Dr. Marzyeh).'
+  affil:
+    'NLP4H (Organization), St. Michael’s Hospital, University of Toronto (Dr. Marzyeh).',
 };
 
 const snorkelInfo = {
-  header: 'Semi-supervised labelling of neurology examination notes using Snorkel',
-  desc: 'A Snorkel pipeline to label raw neurology examination notes based on MS severity types (EDSS, functional subscores, etc). Implemented various labelling functions such as regex-based keyword searches and a CNN model trained on manual labelled data.',
-  features: 'Labelled ~70k neurology notes,  significantly increasing the amount of training data available. The performance of the classifier trained on Snorkel-labelled data (weighted  F1: 0.91) was comparable to the performance of the classifier trained on manual-labelled data (weighted F1: 0.94), and therefore proved its potential to replace expensive manual labelling processes. ',
+  header:
+    'Semi-supervised labelling of neurology examination notes using Snorkel',
+  desc:
+    'A Snorkel pipeline to label raw neurology examination notes based on MS severity types (EDSS, functional subscores, etc). Implemented various labelling functions such as regex-based keyword searches and a CNN model trained on manual labelled data.',
+  features:
+    'Labelled ~70k neurology notes,  significantly increasing the amount of training data available. The performance of the classifier trained on Snorkel-labelled data (weighted  F1: 0.91) was comparable to the performance of the classifier trained on manual-labelled data (weighted F1: 0.94), and therefore proved its potential to replace expensive manual labelling processes. ',
   tools: 'Snorkel',
-  affil: 'NLP4H (Organization), St. Michael’s Hospital, University of Toronto (Dr. Marzyeh).'
+  affil:
+    'NLP4H (Organization), St. Michael’s Hospital, University of Toronto (Dr. Marzyeh).',
 };
 
 const resnetInfo = {
   header: 'CNN transfer learning model for medical image classification',
   link: 'https://github.com/sallymoon10/ResnetImageClassification',
   linkTitle: 'Github repo',
-  desc: 'CNN model implemented with transfer learning (ResNet 50) that classifies medical images with categorical labels. The model obtained highest accuracy for the kaggle challenge with f-score of 1.0. ',
-  features: 'Key components of the model included: weight initialization with ImageNet, pooling with GlobalAveragePooling2D, dropout of 0.7, and optimizing with the Adam optimizer. ',
+  desc:
+    'CNN model implemented with transfer learning (ResNet 50) that classifies medical images with categorical labels. The model obtained highest accuracy for the kaggle challenge with f-score of 1.0. ',
+  features:
+    'Key components of the model included: weight initialization with ImageNet, pooling with GlobalAveragePooling2D, dropout of 0.7, and optimizing with the Adam optimizer. ',
   tools: 'Google colab, Python, Keras, Sklearn, Pandas, Resnet50',
-  affil: 'University of Waterloo, 4th year Course (Introduction to Machine Intelligence)'
+  affil:
+    'University of Waterloo, 4th year Course (Introduction to Machine Intelligence)',
 };
 
 const imageClassificationInfo = {
@@ -143,61 +160,81 @@ const imageClassificationInfo = {
   link: 'https://github.com/sallymoon10/Image-Classification',
   linkTitle: 'Github repo',
   desc: 'MICD / K-means algorithm to classify 10 types of textures images.',
-  features: 'Determined how pixels are classified by using color maps and evaluated the probability of error and construct confusion matrices for each method.',
+  features:
+    'Determined how pixels are classified by using color maps and evaluated the probability of error and construct confusion matrices for each method.',
   tools: 'Matlab',
-  affil: 'University of Waterloo, 3rd year Course (Introduction to Pattern Recognition)'
+  affil:
+    'University of Waterloo, 3rd year Course (Introduction to Pattern Recognition)',
 };
 
 const earModelInfo = {
   header: 'Hearing mechanism simulation algorithm',
-  link: 'https://github.com/sallymoon10/Cochlear-Ear-Mechanics-Model-Simulation',
+  link:
+    'https://github.com/sallymoon10/Cochlear-Ear-Mechanics-Model-Simulation',
   linkTitle: 'Github repo',
-  desc: 'Modelling cochlear mechanics state-space model on Matlab. Modelled hearing by evaluating statpes displacements at various pressure levels.',
-  features: 'Simulated how otosclerosis affects hearing by simulating ear models with various severities of otosclerosis.',
+  desc:
+    'Modelling cochlear mechanics state-space model on Matlab. Modelled hearing by evaluating statpes displacements at various pressure levels.',
+  features:
+    'Simulated how otosclerosis affects hearing by simulating ear models with various severities of otosclerosis.',
   tools: 'Matlab',
-  affil: 'University of Waterloo, 3rd year Course (Anatomical Systems Modelling)'
+  affil:
+    'University of Waterloo, 3rd year Course (Anatomical Systems Modelling)',
 };
 
 const reactNativeInfo = {
   header: 'Mobile app for powered wheelchair driver training ',
-  desc: 'An android / iOS mobile app to train powered wheelchair users to navigate tight spaces with the Braze Sentina wheelchair sensors',
-  features: 'Implemented calibration system to test out output signals (light, vibration, sound) of the Braze Sentina. Trains users to use signals to drive safely in a variety of tight navigation scenarios. ',
+  desc:
+    'An android / iOS mobile app to train powered wheelchair users to navigate tight spaces with the Braze Sentina wheelchair sensors',
+  features:
+    'Implemented calibration system to test out output signals (light, vibration, sound) of the Braze Sentina. Trains users to use signals to drive safely in a variety of tight navigation scenarios. ',
   tools: 'React Native',
-  affil: 'Braze Mobility, Internship. Note: code could not be publicized due to restrictions.'
+  affil:
+    'Braze Mobility, Internship. Note: code could not be publicized due to restrictions.',
 };
 
 const heatmapInfo = {
   header: 'EI Pro: heatmap body injury location feature',
-  desc: 'A feature for EI Pro that visualizes which body parts police officers targetting during arrest and conflict',
-  features: 'Allows governing bodies to determine whether police officers are using force in safe areas',
+  desc:
+    'A feature for EI Pro that visualizes which body parts police officers targetting during arrest and conflict',
+  features:
+    'Allows governing bodies to determine whether police officers are using force in safe areas',
   tools: 'Javascript, Heatmap.js, JSON',
-  affil: 'CI Technologies, Internship. Note: code could not be publicized due to restrictions.'
+  affil:
+    'CI Technologies, Internship. Note: code could not be publicized due to restrictions.',
 };
 
 const abstandardsInfo = {
   header: 'ABStandards: Police incident reporting app',
-  desc: 'A web application that generates professional reports with visual graphs and data tables for police incidents.',
-  features: 'Allows you to custom define your search parameters. Both front-end and back-end implementation was developed throughout the duration of the internship.',
+  desc:
+    'A web application that generates professional reports with visual graphs and data tables for police incidents.',
+  features:
+    'Allows you to custom define your search parameters. Both front-end and back-end implementation was developed throughout the duration of the internship.',
   tools: 'Java, Javascript, HTML, Chart.js',
-  affil: 'CI Technologies, Internship. Note: code could not be publicized due to restrictions.'
+  affil:
+    'CI Technologies, Internship. Note: code could not be publicized due to restrictions.',
 };
 
 const unityInfo = {
   header: 'Space Squirrel: touch-screen game for demential prevention',
-  desc: 'A multi-touch screen game that helps prevents onset of dementia with cognitively stimulating games. Allows multiple users to explore new plants as squirrel characters and unlock new regions by playing games. ',
-  features: 'Fun and intuitive game play allows grandchildren and grandparents to play together and bond, motivating participation from seniors. ',
+  desc:
+    'A multi-touch screen game that helps prevents onset of dementia with cognitively stimulating games. Allows multiple users to explore new plants as squirrel characters and unlock new regions by playing games. ',
+  features:
+    'Fun and intuitive game play allows grandchildren and grandparents to play together and bond, motivating participation from seniors. ',
   tools: 'Unity 3D, Blender, Multitouch Digital  ',
-  affil: 'IATSL (Intelligent Assistive Technology and Systems), Internship. Note: code could not be publicized due to restrictions.'
+  affil:
+    'IATSL (Intelligent Assistive Technology and Systems), Internship. Note: code could not be publicized due to restrictions.',
 };
 
 const processingInfo = {
   header: 'MilkyWay: Game for children with cerebral palsy',
-  desc: 'Collaborative & fun game design that accomodates children with cerebral palsy. Players launch into outer space to save space cows. ',
-  features: 'Adaptive controller design and team-oriented game play that accomodates for physical and intellectual disabilities.',
-  tools: 'Processing, Arduino (accelerometer, buttons, potentiometer, sliders), Adobe Illustrator',
-  affil: 'University of Waterloo, 3rd Year design project.'
+  desc:
+    'Collaborative & fun game design that accomodates children with cerebral palsy. Players launch into outer space to save space cows. ',
+  features:
+    'Adaptive controller design and team-oriented game play that accomodates for physical and intellectual disabilities.',
+  tools:
+    'Processing, Arduino (accelerometer, buttons, potentiometer, sliders), Adobe Illustrator',
+  affil: 'University of Waterloo, 3rd Year design project.',
 };
-
 
 export default function DevWork() {
   return (
@@ -222,14 +259,14 @@ export default function DevWork() {
         />
 
         <WorkButton
-        imgSrc={allenNLPButton}
-        hoverSrc={allenNLPButtonHover}
-        img1Src={allenNLPImage1}
-        header={allenNLPInfo.header}
-        desc={allenNLPInfo.desc}
-        features={allenNLPInfo.features}
-        tools={allenNLPInfo.tools}
-        affil={allenNLPInfo.affil}
+          imgSrc={allenNLPButton}
+          hoverSrc={allenNLPButtonHover}
+          img1Src={allenNLPImage1}
+          header={allenNLPInfo.header}
+          desc={allenNLPInfo.desc}
+          features={allenNLPInfo.features}
+          tools={allenNLPInfo.tools}
+          affil={allenNLPInfo.affil}
         />
 
         <WorkButton
@@ -267,11 +304,9 @@ export default function DevWork() {
           tools={resnetInfo.tools}
           affil={resnetInfo.affil}
         />
-
       </ButtonSection>
 
       <ButtonSection>
-
         <WorkButton
           imgSrc={imageClassificationButton}
           hoverSrc={imageClassificationButtonHover}
@@ -364,7 +399,6 @@ export default function DevWork() {
           tools={processingInfo.tools}
           affil={processingInfo.affil}
         />
-
       </ButtonSection>
       <Footer style={{ backgroundColor: colors.grey }}>
         <SectionImage src={footer} />

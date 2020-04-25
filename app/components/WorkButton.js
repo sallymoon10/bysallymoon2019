@@ -123,7 +123,11 @@ class WorkButton extends React.Component {
             <ContentSection>
               <Header>{this.props.header}</Header>
               <hr />
-              <a href = {this.props.link} target="_blank"><Content style={{ color: colors.blue }}>{this.props.linkTitle}</Content></a>
+              <a href={this.props.link} target="_blank">
+                <Content style={{ color: colors.blue }}>
+                  {this.props.linkTitle}
+                </Content>
+              </a>
               <SubHeader>Project description:</SubHeader>
               <Content>{this.props.desc}</Content>
               <SubHeader>Key features:</SubHeader>
