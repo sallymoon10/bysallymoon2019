@@ -16,12 +16,11 @@ import aiLanding from '../../images/Landing/AILandingSection.png';
 import codeLanding from '../../images/Landing/CodeLandingSection.png';
 import designLanding from '../../images/Landing/DesignLandingSection.png';
 import letsWork from '../../images/Landing/LetsWork.png';
-import footer from '../../images/Landing/Footer.png';
 import ViewWorkButton from '../../images/Buttons/ViewWorkButton.png';
 import ViewContactButton from '../../images/Buttons/ViewContactButton.png';
-import githubIcon from '../../images/Buttons/githubIcon.png';
-import linkedinIcon from '../../images/Buttons/linkedinIcon.png';
-import DotLoader from "react-spinners/DotLoader";
+import FooterTop from '../../components/FooterTop';
+import FooterBottom from '../../components/FooterBottom';
+import Loader from '../../components/Loader';
 
 const Container = styled.div`
   width: 100%;
@@ -85,58 +84,6 @@ const ButtonImage = styled.img`
   height: 50%;
 `;
 
-const FooterTop = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 2%;
-  padding-bottom: 1%;
-  justifycontent: center;
-  alignitems: center;
-`;
-
-const FooterBottom = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 5%;
-  justifycontent: center;
-  alignitems: center;
-`;
-
-const IconLeft = styled.a`
-  width: 80%;
-  height: 80%;
-  margin-left: 45%;
-`;
-
-const IconRight = styled.a`
-  width: 80%;
-  height: 80%;
-  margin-right: 45%;
-`;
-
-const IconImage = styled.img`
-  width: 70%;
-  height: 70%;
-`;
-
-
-const LoaderContainer = styled.div`
-  display: flex;
-  position: absolute;
-  padding-left: 50%;
-  padding-top: 25%;
-`;
-
-const Loader = styled.div`
-  flex: 1;
-  width:120%;
-  height:120%;
-`;
-
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
@@ -148,7 +95,7 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({isLoading: true})
+    this.setState({isLoading: true});
     setTimeout(() => {
       this.setState({isLoading: false})
     }, 1000);
@@ -156,7 +103,7 @@ class HomePage extends React.Component {
 
   render() {
 
-    if (this.state.isLoading) return <LoaderContainer><Loader><DotLoader color={colors.yellow}/></Loader></LoaderContainer>;
+    if (this.state.isLoading) return <Loader/>;
     return (
       <Container>
         <NavBar />
@@ -243,18 +190,8 @@ class HomePage extends React.Component {
             </Link>
           </CenterButton>
         </Section>
-
-        <FooterTop style={{ backgroundColor: colors.grey }}>
-          <SectionImage src={footer} />
-        </FooterTop>
-        <FooterBottom style={{ backgroundColor: colors.grey }}>
-          <IconLeft href={"https://github.com/sallymoon10"} target="_blank">
-            <IconImage src={githubIcon} />
-          </IconLeft>
-          <IconRight href={"https://www.linkedin.com/in/sallysaeyoungmoon/"} target="_blank">
-            <IconImage src={linkedinIcon} />
-          </IconRight>
-        </FooterBottom>
+        <FooterTop/>
+        <FooterBottom/>
       </Container>
     );
   }

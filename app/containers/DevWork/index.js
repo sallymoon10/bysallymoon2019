@@ -47,10 +47,11 @@ import allenNLPImage1 from '../../images/WorkImages/AllenNLPImage1.png';
 import snorkelButton from '../../images/WorkButtons/SnorkelButton.png';
 import snorkelButtonHover from '../../images/WorkButtons/SnorkelButtonHover.png';
 import snorkelImage1 from '../../images/WorkImages/SnorkelImage1.png';
-
-import footer from '../../images/Landing/Footer.png';
 import WorkButton from '../../components/WorkButton';
-import colors from '../../components/Colors';
+import Loader from '../../components/Loader';
+import FooterTop from '../../components/FooterTop';
+import FooterBottom from '../../components/FooterBottom';
+import DesignWork from '../DesignWork';
 
 const Container = styled.div`
   width: 100%;
@@ -236,173 +237,190 @@ const processingInfo = {
   affil: 'University of Waterloo, 3rd Year design project.',
 };
 
-export default function DevWork() {
-  return (
-    <Container>
-      <NavBar devState />
-      <Gap />
+class DevWork extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isLoading: false};
+  }
 
-      <Header>Machine Learning / AI</Header>
+  componentDidMount() {
+    this.setState({isLoading: true});
+    setTimeout(() => {
+      this.setState({isLoading: false})
+    }, 500);
+  }
 
-      <ButtonSection>
-        <WorkButton
-          imgSrc={msBertButton}
-          hoverSrc={msBertButtonHover}
-          img1Src={msBertImage1}
-          link={msbertInfo.link}
-          linkTitle={msbertInfo.linkTitle}
-          header={msbertInfo.header}
-          desc={msbertInfo.desc}
-          features={msbertInfo.features}
-          tools={msbertInfo.tools}
-          affil={msbertInfo.affil}
-        />
+  render() {
+    if (this.state.isLoading) return <Loader/>;
+    
+    return (
+      <Container>
+        <NavBar devState/>
+        <Gap/>
 
-        <WorkButton
-          imgSrc={allenNLPButton}
-          hoverSrc={allenNLPButtonHover}
-          img1Src={allenNLPImage1}
-          header={allenNLPInfo.header}
-          desc={allenNLPInfo.desc}
-          features={allenNLPInfo.features}
-          tools={allenNLPInfo.tools}
-          affil={allenNLPInfo.affil}
-        />
+        <Header>Machine Learning / AI</Header>
 
-        <WorkButton
-          imgSrc={snorkelButton}
-          hoverSrc={snorkelButtonHover}
-          img1Src={snorkelImage1}
-          header={snorkelInfo.header}
-          desc={snorkelInfo.desc}
-          features={snorkelInfo.features}
-          tools={snorkelInfo.tools}
-          affil={snorkelInfo.affil}
-        />
+        <ButtonSection>
+          <WorkButton
+            imgSrc={msBertButton}
+            hoverSrc={msBertButtonHover}
+            img1Src={msBertImage1}
+            link={msbertInfo.link}
+            linkTitle={msbertInfo.linkTitle}
+            header={msbertInfo.header}
+            desc={msbertInfo.desc}
+            features={msbertInfo.features}
+            tools={msbertInfo.tools}
+            affil={msbertInfo.affil}
+          />
 
-        <WorkButton
-          imgSrc={mimicButton}
-          hoverSrc={mimicButtonHover}
-          img1Src={mimicImage1}
-          header={mimicInfo.header}
-          desc={mimicInfo.desc}
-          features={mimicInfo.features}
-          tools={mimicInfo.tools}
-          affil={mimicInfo.affil}
-        />
+          <WorkButton
+            imgSrc={allenNLPButton}
+            hoverSrc={allenNLPButtonHover}
+            img1Src={allenNLPImage1}
+            header={allenNLPInfo.header}
+            desc={allenNLPInfo.desc}
+            features={allenNLPInfo.features}
+            tools={allenNLPInfo.tools}
+            affil={allenNLPInfo.affil}
+          />
 
-        <WorkButton
-          imgSrc={resnetButton}
-          hoverSrc={resnetButtonHover}
-          img1Src={resnetImage1}
-          img2Src={resnetImage2}
-          link={resnetInfo.link}
-          linkTitle={resnetInfo.linkTitle}
-          header={resnetInfo.header}
-          desc={resnetInfo.desc}
-          features={resnetInfo.features}
-          tools={resnetInfo.tools}
-          affil={resnetInfo.affil}
-        />
-      </ButtonSection>
+          <WorkButton
+            imgSrc={snorkelButton}
+            hoverSrc={snorkelButtonHover}
+            img1Src={snorkelImage1}
+            header={snorkelInfo.header}
+            desc={snorkelInfo.desc}
+            features={snorkelInfo.features}
+            tools={snorkelInfo.tools}
+            affil={snorkelInfo.affil}
+          />
 
-      <ButtonSection>
-        <WorkButton
-          imgSrc={imageClassificationButton}
-          hoverSrc={imageClassificationButtonHover}
-          img1Src={imageClassificationImage1}
-          img2Src={imageClassificationImage2}
-          link={imageClassificationInfo.link}
-          linkTitle={imageClassificationInfo.linkTitle}
-          header={imageClassificationInfo.header}
-          desc={imageClassificationInfo.desc}
-          features={imageClassificationInfo.features}
-          tools={imageClassificationInfo.tools}
-          affil={imageClassificationInfo.affil}
-        />
+          <WorkButton
+            imgSrc={mimicButton}
+            hoverSrc={mimicButtonHover}
+            img1Src={mimicImage1}
+            header={mimicInfo.header}
+            desc={mimicInfo.desc}
+            features={mimicInfo.features}
+            tools={mimicInfo.tools}
+            affil={mimicInfo.affil}
+          />
 
-        <WorkButton
-          imgSrc={earModelButton}
-          hoverSrc={earModelButtonHover}
-          img1Src={earModelImage1}
-          link={earModelInfo.link}
-          linkTitle={earModelInfo.linkTitle}
-          header={earModelInfo.header}
-          desc={earModelInfo.desc}
-          features={earModelInfo.features}
-          tools={earModelInfo.tools}
-          affil={earModelInfo.affil}
-        />
-      </ButtonSection>
+          <WorkButton
+            imgSrc={resnetButton}
+            hoverSrc={resnetButtonHover}
+            img1Src={resnetImage1}
+            img2Src={resnetImage2}
+            link={resnetInfo.link}
+            linkTitle={resnetInfo.linkTitle}
+            header={resnetInfo.header}
+            desc={resnetInfo.desc}
+            features={resnetInfo.features}
+            tools={resnetInfo.tools}
+            affil={resnetInfo.affil}
+          />
+        </ButtonSection>
 
-      <Header>Mobile & Web Apps</Header>
+        <ButtonSection>
+          <WorkButton
+            imgSrc={imageClassificationButton}
+            hoverSrc={imageClassificationButtonHover}
+            img1Src={imageClassificationImage1}
+            img2Src={imageClassificationImage2}
+            link={imageClassificationInfo.link}
+            linkTitle={imageClassificationInfo.linkTitle}
+            header={imageClassificationInfo.header}
+            desc={imageClassificationInfo.desc}
+            features={imageClassificationInfo.features}
+            tools={imageClassificationInfo.tools}
+            affil={imageClassificationInfo.affil}
+          />
 
-      <ButtonSection>
-        <WorkButton
-          imgSrc={reactNativeButton}
-          hoverSrc={reactNativeButtonHover}
-          img1Src={reactNativeImage1}
-          img2Src={reactNativeImage2}
-          header={reactNativeInfo.header}
-          desc={reactNativeInfo.desc}
-          features={reactNativeInfo.features}
-          tools={reactNativeInfo.tools}
-          affil={reactNativeInfo.affil}
-        />
+          <WorkButton
+            imgSrc={earModelButton}
+            hoverSrc={earModelButtonHover}
+            img1Src={earModelImage1}
+            link={earModelInfo.link}
+            linkTitle={earModelInfo.linkTitle}
+            header={earModelInfo.header}
+            desc={earModelInfo.desc}
+            features={earModelInfo.features}
+            tools={earModelInfo.tools}
+            affil={earModelInfo.affil}
+          />
+        </ButtonSection>
 
-        <WorkButton
-          imgSrc={heatmapButton}
-          hoverSrc={heatmapButtonHover}
-          img1Src={heatmapImage1}
-          header={heatmapInfo.header}
-          desc={heatmapInfo.desc}
-          features={heatmapInfo.features}
-          tools={heatmapInfo.tools}
-          affil={heatmapInfo.affil}
-        />
+        <Header>Mobile & Web Apps</Header>
 
-        <WorkButton
-          imgSrc={abStandardsButton}
-          hoverSrc={abStandardsButtonHover}
-          img1Src={abstandardsImage1}
-          img2Src={abstandardsImage2}
-          header={abstandardsInfo.header}
-          desc={abstandardsInfo.desc}
-          features={abstandardsInfo.features}
-          tools={abstandardsInfo.tools}
-          affil={abstandardsInfo.affil}
-        />
-      </ButtonSection>
+        <ButtonSection>
+          <WorkButton
+            imgSrc={reactNativeButton}
+            hoverSrc={reactNativeButtonHover}
+            img1Src={reactNativeImage1}
+            img2Src={reactNativeImage2}
+            header={reactNativeInfo.header}
+            desc={reactNativeInfo.desc}
+            features={reactNativeInfo.features}
+            tools={reactNativeInfo.tools}
+            affil={reactNativeInfo.affil}
+          />
 
-      <Header>Games</Header>
-      <ButtonSection>
-        <WorkButton
-          imgSrc={unityButton}
-          hoverSrc={unityButtonHover}
-          img1Src={unityImage1}
-          img2Src={unityImage2}
-          header={unityInfo.header}
-          desc={unityInfo.desc}
-          features={unityInfo.features}
-          tools={unityInfo.tools}
-          affil={unityInfo.affil}
-        />
+          <WorkButton
+            imgSrc={heatmapButton}
+            hoverSrc={heatmapButtonHover}
+            img1Src={heatmapImage1}
+            header={heatmapInfo.header}
+            desc={heatmapInfo.desc}
+            features={heatmapInfo.features}
+            tools={heatmapInfo.tools}
+            affil={heatmapInfo.affil}
+          />
 
-        <WorkButton
-          imgSrc={processingButton}
-          hoverSrc={processingButtonHover}
-          img1Src={processingImage1}
-          img2Src={processingImage2}
-          header={processingInfo.header}
-          desc={processingInfo.desc}
-          features={processingInfo.features}
-          tools={processingInfo.tools}
-          affil={processingInfo.affil}
-        />
-      </ButtonSection>
-      <Footer style={{ backgroundColor: colors.grey }}>
-        <SectionImage src={footer} />
-      </Footer>
-    </Container>
-  );
+          <WorkButton
+            imgSrc={abStandardsButton}
+            hoverSrc={abStandardsButtonHover}
+            img1Src={abstandardsImage1}
+            img2Src={abstandardsImage2}
+            header={abstandardsInfo.header}
+            desc={abstandardsInfo.desc}
+            features={abstandardsInfo.features}
+            tools={abstandardsInfo.tools}
+            affil={abstandardsInfo.affil}
+          />
+        </ButtonSection>
+
+        <Header>Games</Header>
+        <ButtonSection>
+          <WorkButton
+            imgSrc={unityButton}
+            hoverSrc={unityButtonHover}
+            img1Src={unityImage1}
+            img2Src={unityImage2}
+            header={unityInfo.header}
+            desc={unityInfo.desc}
+            features={unityInfo.features}
+            tools={unityInfo.tools}
+            affil={unityInfo.affil}
+          />
+
+          <WorkButton
+            imgSrc={processingButton}
+            hoverSrc={processingButtonHover}
+            img1Src={processingImage1}
+            img2Src={processingImage2}
+            header={processingInfo.header}
+            desc={processingInfo.desc}
+            features={processingInfo.features}
+            tools={processingInfo.tools}
+            affil={processingInfo.affil}
+          />
+        </ButtonSection>
+        <FooterTop/>
+        <FooterBottom/>
+      </Container>
+    );
+  }
 }
+
+export default DevWork;

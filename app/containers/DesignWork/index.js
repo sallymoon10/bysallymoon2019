@@ -29,8 +29,11 @@ import spacesquirrelButton from '../../images/WorkButtons/SpaceSquirrelButton.pn
 import spacesquirrelButtonHover from '../../images/WorkButtons/SpaceSquirrelButtonHover.png';
 import spacesquirrelImage1 from '../../images/WorkImages/spaceSquirrelAssetsImage1.png';
 import spacesquirrelImage2 from '../../images/WorkImages/spaceSquirrelAssetsImage2.png';
+import FooterTop from '../../components/FooterTop';
+import FooterBottom from '../../components/FooterBottom';
 
 import WorkButton from '../../components/WorkButton';
+import Loader from '../../components/Loader';
 
 const Container = styled.div`
   width: 100%;
@@ -112,86 +115,105 @@ const cadInfo = {
   affil: 'University of Alberta, Internship'
 };
 
-export default function DesignWork() {
-  return (
-    <Container>
-      <NavBar designState />
-      <Gap />
-      <Header>User Interface / UX designs</Header>
-      <ButtonSection>
-        <WorkButton
-          imgSrc={couerButton}
-          hoverSrc={couerButtonHover}
-          img1Src={CouerImage1}
-          img2Src={CouerImage2}
-          header={couerInfo.header}
-          desc={couerInfo.desc}
-          features={couerInfo.features}
-          tools={couerInfo.tools}
-          affil={couerInfo.affil}
-        />
-        <WorkButton
-          imgSrc={blueteamButton}
-          hoverSrc={blueteamButtonHover}
-          img1Src={blueteamImage1}
-          img2Src={blueteamImage2}
-          header={blueteamInfo.header}
-          desc={blueteamInfo.desc}
-          features={blueteamInfo.features}
-          tools={blueteamInfo.tools}
-          affil={blueteamInfo.affil}
-        />
-      </ButtonSection>
+class DesignWork extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isLoading: false};
+  }
 
-      <Header>2D Illustrations / 3D assets</Header>
-      <ButtonSection>
-        <WorkButton
-          imgSrc={lineIconButton}
-          hoverSrc={lineIconButtonHover}
-          img1Src={lineIconImage1}
-          img2Src={lineIconImage2}
-          header={lineIconInfo.header}
-          desc={lineIconInfo.desc}
-          features={lineIconInfo.features}
-          tools={lineIconInfo.tools}
-          affil={lineIconInfo.affil}
-        />
+  componentDidMount() {
+    this.setState({isLoading: true});
+    setTimeout(() => {
+      this.setState({isLoading: false})
+    }, 500);
+  }
 
-        <WorkButton
-          imgSrc={flaticonButton}
-          hoverSrc={flaticonButtonHover}
-          img1Src={flaticonImage1}
-          img2Src={flaticonImage2}
-          header={flatIconInfo.header}
-          desc={flatIconInfo.desc}
-          features={flatIconInfo.features}
-          tools={flatIconInfo.tools}
-          affil={flatIconInfo.affil}
-        />
+  render() {
+    if (this.state.isLoading) return <Loader/>;
+    return (
+      <Container>
+        <NavBar designState />
+        <Gap />
+        <Header>User Interface / UX designs</Header>
+        <ButtonSection>
+          <WorkButton
+            imgSrc={couerButton}
+            hoverSrc={couerButtonHover}
+            img1Src={CouerImage1}
+            img2Src={CouerImage2}
+            header={couerInfo.header}
+            desc={couerInfo.desc}
+            features={couerInfo.features}
+            tools={couerInfo.tools}
+            affil={couerInfo.affil}
+          />
+          <WorkButton
+            imgSrc={blueteamButton}
+            hoverSrc={blueteamButtonHover}
+            img1Src={blueteamImage1}
+            img2Src={blueteamImage2}
+            header={blueteamInfo.header}
+            desc={blueteamInfo.desc}
+            features={blueteamInfo.features}
+            tools={blueteamInfo.tools}
+            affil={blueteamInfo.affil}
+          />
+        </ButtonSection>
 
-        <WorkButton
-          imgSrc={spacesquirrelButton}
-          hoverSrc={spacesquirrelButtonHover}
-          img1Src={spacesquirrelImage1}
-          img2Src={spacesquirrelImage2}
-          header={spacesquirrelInfo.header}
-          desc={spacesquirrelInfo.desc}
-          features={spacesquirrelInfo.features}
-          tools={spacesquirrelInfo.tools}
-          affil={spacesquirrelInfo.affil}
-        />
-        <WorkButton
-          imgSrc={cadButton}
-          hoverSrc={cadButtonHover}
-          img1Src={cadImage1}
-          img2Src={cadImage2}
-          header={cadInfo.header}
-          desc={cadInfo.desc}
-          features={cadInfo.features}
-          tools={cadInfo.tools}
-          affil={cadInfo.affil}
-        />
-      </ButtonSection>
-    </Container>
-  );
+        <Header>2D Illustrations / 3D assets</Header>
+        <ButtonSection>
+          <WorkButton
+            imgSrc={lineIconButton}
+            hoverSrc={lineIconButtonHover}
+            img1Src={lineIconImage1}
+            img2Src={lineIconImage2}
+            header={lineIconInfo.header}
+            desc={lineIconInfo.desc}
+            features={lineIconInfo.features}
+            tools={lineIconInfo.tools}
+            affil={lineIconInfo.affil}
+          />
+
+          <WorkButton
+            imgSrc={flaticonButton}
+            hoverSrc={flaticonButtonHover}
+            img1Src={flaticonImage1}
+            img2Src={flaticonImage2}
+            header={flatIconInfo.header}
+            desc={flatIconInfo.desc}
+            features={flatIconInfo.features}
+            tools={flatIconInfo.tools}
+            affil={flatIconInfo.affil}
+          />
+
+          <WorkButton
+            imgSrc={spacesquirrelButton}
+            hoverSrc={spacesquirrelButtonHover}
+            img1Src={spacesquirrelImage1}
+            img2Src={spacesquirrelImage2}
+            header={spacesquirrelInfo.header}
+            desc={spacesquirrelInfo.desc}
+            features={spacesquirrelInfo.features}
+            tools={spacesquirrelInfo.tools}
+            affil={spacesquirrelInfo.affil}
+          />
+          <WorkButton
+            imgSrc={cadButton}
+            hoverSrc={cadButtonHover}
+            img1Src={cadImage1}
+            img2Src={cadImage2}
+            header={cadInfo.header}
+            desc={cadInfo.desc}
+            features={cadInfo.features}
+            tools={cadInfo.tools}
+            affil={cadInfo.affil}
+          />
+        </ButtonSection>
+        <FooterTop/>
+        <FooterBottom/>
+      </Container>
+    );
+  }
 }
+
+export default DesignWork;
