@@ -21,6 +21,7 @@ import ViewWorkButton from '../../images/Buttons/ViewWorkButton.png';
 import ViewContactButton from '../../images/Buttons/ViewContactButton.png';
 import githubIcon from '../../images/Buttons/githubIcon.png';
 import linkedinIcon from '../../images/Buttons/linkedinIcon.png';
+import DotLoader from "react-spinners/DotLoader";
 
 const Container = styled.div`
   width: 100%;
@@ -36,15 +37,6 @@ const Section = styled.div`
   justifyContent: center;
   alignItems: center;
 `;
-
-const Footer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justifyContent: center;
-  alignItems: center;
-  padding-right: 3%;
-`;
-
 
 const Image = styled.img`
   width: 40%;
@@ -131,6 +123,20 @@ const IconImage = styled.img`
   height: 70%;
 `;
 
+
+const LoaderContainer = styled.div`
+  display: flex;
+  position: absolute;
+  padding-left: 50%;
+  padding-top: 25%;
+`;
+
+const Loader = styled.div`
+  flex: 1;
+  width:120%;
+  height:120%;
+`;
+
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
@@ -138,9 +144,19 @@ class HomePage extends React.Component {
     this.state = { devWorkButtonHover: false };
     this.state = { designWorkButtonHover: false };
     this.state = { contactsButtonHover: false };
+    this.state = {isLoading: false};
+  }
+
+  componentDidMount() {
+    this.setState({isLoading: true})
+    setTimeout(() => {
+      this.setState({isLoading: false})
+    }, 1000);
   }
 
   render() {
+
+    if (this.state.isLoading) return <LoaderContainer><Loader><DotLoader color={colors.yellow}/></Loader></LoaderContainer>;
     return (
       <Container>
         <NavBar />
