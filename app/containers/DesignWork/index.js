@@ -34,6 +34,7 @@ import FooterBottom from '../../components/FooterBottom';
 
 import WorkButton from '../../components/WorkButton';
 import Loader from '../../components/Loader';
+import '../../components/styles.css';
 
 const Container = styled.div`
   width: 100%;
@@ -134,6 +135,42 @@ const cadInfo = {
   affil: 'University of Alberta, Internship'
 };
 
+function FadeInSection(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <Section
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}>
+      {props.children}
+    </Section>
+  );
+}
+
+function FadeInButtonSection(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <ButtonSection
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}>
+      {props.children}
+    </ButtonSection>
+  );
+}
+
 class DesignWork extends React.Component {
   constructor(props) {
     super(props);
@@ -152,14 +189,14 @@ class DesignWork extends React.Component {
     return (
       <Container>
         <NavBar/>
-        <Section>
+        <FadeInSection>
           <Header>User Interface / UX designs</Header>
-        </Section>
-        <Section>
+        </FadeInSection>
+        <FadeInSection>
           <Underline></Underline>
-        </Section>
+        </FadeInSection>
 
-        <ButtonSection>
+        <FadeInButtonSection>
           <WorkButton
             imgSrc={couerButton}
             hoverSrc={couerButtonHover}
@@ -182,16 +219,16 @@ class DesignWork extends React.Component {
             tools={blueteamInfo.tools}
             affil={blueteamInfo.affil}
           />
-        </ButtonSection>
+        </FadeInButtonSection>
 
-        <Section>
+        <FadeInSection>
           <Header>2D Illustrations / 3D assets</Header>
-        </Section>
-        <Section>
+        </FadeInSection>
+        <FadeInSection>
           <Underline></Underline>
-        </Section>
+        </FadeInSection>
 
-        <ButtonSection>
+        <FadeInButtonSection>
           <WorkButton
             imgSrc={lineIconButton}
             hoverSrc={lineIconButtonHover}
@@ -238,7 +275,7 @@ class DesignWork extends React.Component {
             tools={cadInfo.tools}
             affil={cadInfo.affil}
           />
-        </ButtonSection>
+        </FadeInButtonSection>
         <FooterTop/>
         <FooterBottom/>
       </Container>

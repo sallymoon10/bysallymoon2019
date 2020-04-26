@@ -12,6 +12,7 @@ import FooterTop from '../../components/FooterTop';
 import FooterBottom from '../../components/FooterBottom';
 import Loader from '../../components/Loader';
 import colors from '../../components/Colors';
+import '../../components/styles.css';
 
 const Section = styled.div`
   display: flex;
@@ -69,6 +70,24 @@ const Gap = styled.div`
   padding-bottom: 15%;
 `;
 
+function FadeInSection(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <Section
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}>
+      {props.children}
+    </Section>
+  );
+}
+
 class Contacts extends React.Component {
   constructor(props) {
     super(props);
@@ -88,13 +107,13 @@ class Contacts extends React.Component {
     return (
       <Container>
         <NavBar />
-        <Section>
+        <FadeInSection>
           <Header>Let's get in touch!</Header>
-        </Section>
-        <Section>
+        </FadeInSection>
+        <FadeInSection>
           <Underline></Underline>
-        </Section>
-        <Section>
+        </FadeInSection>
+        <FadeInSection>
           <SubSection>picture here</SubSection>
           <SubSection>
             <SubHeaderContainer>
@@ -110,16 +129,10 @@ class Contacts extends React.Component {
               <SubHeader>IATSL (Lab) Profile: </SubHeader><a href={"https://www.iatsl.org/people/smoon.html"} target="_blank"><Content style={{ color: colors.blue}}>https://www.iatsl.org/people/smoon.html</Content></a>
             </SubHeaderContainer>
           </SubSection>
-        </Section>
+        </FadeInSection>
         <Gap/>
         <FooterTop/>
         <FooterBottom/>
-
-
-          <Content style={{ color: colors.blue }}>
-            {this.props.linkTitle}
-          </Content>
-
 
       </Container>
 

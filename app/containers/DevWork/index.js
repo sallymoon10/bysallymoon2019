@@ -51,14 +51,10 @@ import WorkButton from '../../components/WorkButton';
 import Loader from '../../components/Loader';
 import FooterTop from '../../components/FooterTop';
 import FooterBottom from '../../components/FooterBottom';
-import DesignWork from '../DesignWork';
+import '../../components/styles.css';
 
 const Container = styled.div`
   width: 100%;
-`;
-
-const Gap = styled.div`
-  padding-top: 5%;
 `;
 
 const ButtonSection = styled.div`
@@ -244,6 +240,43 @@ const processingInfo = {
   affil: 'University of Waterloo, 3rd Year design project.',
 };
 
+function FadeInSection(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <Section
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}>
+      {props.children}
+    </Section>
+  );
+}
+
+function FadeInButtonSection(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <ButtonSection
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}>
+      {props.children}
+    </ButtonSection>
+  );
+}
+
+
 class DevWork extends React.Component {
   constructor(props) {
     super(props);
@@ -263,14 +296,14 @@ class DevWork extends React.Component {
     return (
       <Container>
         <NavBar devState/>
-        <Section>
+        <FadeInSection>
           <Header>Machine Learning / AI</Header>
-        </Section>
-        <Section>
+        </FadeInSection>
+        <FadeInSection>
           <Underline></Underline>
-        </Section>
+        </FadeInSection>
 
-        <ButtonSection>
+        <FadeInButtonSection>
           <WorkButton
             imgSrc={msBertButton}
             hoverSrc={msBertButtonHover}
@@ -330,9 +363,9 @@ class DevWork extends React.Component {
             tools={resnetInfo.tools}
             affil={resnetInfo.affil}
           />
-        </ButtonSection>
+        </FadeInButtonSection>
 
-        <ButtonSection>
+        <FadeInButtonSection>
           <WorkButton
             imgSrc={imageClassificationButton}
             hoverSrc={imageClassificationButtonHover}
@@ -359,16 +392,16 @@ class DevWork extends React.Component {
             tools={earModelInfo.tools}
             affil={earModelInfo.affil}
           />
-        </ButtonSection>
+        </FadeInButtonSection>
 
-        <Section>
+        <FadeInSection>
           <Header>Mobile & Web Apps</Header>
-        </Section>
-        <Section>
+        </FadeInSection>
+        <FadeInSection>
           <Underline></Underline>
-        </Section>
+        </FadeInSection>
 
-        <ButtonSection>
+        <FadeInButtonSection>
           <WorkButton
             imgSrc={reactNativeButton}
             hoverSrc={reactNativeButtonHover}
@@ -403,15 +436,15 @@ class DevWork extends React.Component {
             tools={abstandardsInfo.tools}
             affil={abstandardsInfo.affil}
           />
-        </ButtonSection>
+        </FadeInButtonSection>
 
-        <Section>
+        <FadeInSection>
           <Header>Games</Header>
-        </Section>
-        <Section>
+        </FadeInSection>
+        <FadeInSection>
           <Underline></Underline>
-        </Section>
-        <ButtonSection>
+        </FadeInSection>
+        <FadeInButtonSection>
           <WorkButton
             imgSrc={unityButton}
             hoverSrc={unityButtonHover}
@@ -435,7 +468,7 @@ class DevWork extends React.Component {
             tools={processingInfo.tools}
             affil={processingInfo.affil}
           />
-        </ButtonSection>
+        </FadeInButtonSection>
         <FooterTop/>
         <FooterBottom/>
       </Container>
