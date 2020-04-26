@@ -43,13 +43,6 @@ const Gap = styled.div`
   padding-top: 5%;
 `;
 
-const Header = styled.h1`
-  flex: 1;
-  text-align: center;
-  font-size: 1.2em;
-  font-weight: 300;
-`;
-
 const ButtonSection = styled.div`
   display: flex;
   flex-direction: row;
@@ -59,6 +52,36 @@ const ButtonSection = styled.div`
   padding-right: 10%;
   padding-bottom: 5%;
   padding-top: 5%;
+`;
+
+const Header = styled.h1`
+  flex: 1;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.2em;
+  padding-top: 2%;
+  margin-bottom: -5%;
+`;
+
+const Section = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  justifyContent: center;
+  alignItems: center;
+`;
+
+
+const Underline = styled.h1`
+  flex: 1;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin-left: 35%;
+  margin-right: 35%;
 `;
 
 const couerInfo = {
@@ -132,9 +155,14 @@ class DesignWork extends React.Component {
     if (this.state.isLoading) return <Loader/>;
     return (
       <Container>
-        <NavBar designState />
-        <Gap />
-        <Header>User Interface / UX designs</Header>
+        <NavBar/>
+        <Section>
+          <Header>User Interface / UX designs</Header>
+        </Section>
+        <Section>
+          <Underline></Underline>
+        </Section>
+
         <ButtonSection>
           <WorkButton
             imgSrc={couerButton}
@@ -160,7 +188,13 @@ class DesignWork extends React.Component {
           />
         </ButtonSection>
 
-        <Header>2D Illustrations / 3D assets</Header>
+        <Section>
+          <Header>2D Illustrations / 3D assets</Header>
+        </Section>
+        <Section>
+          <Underline></Underline>
+        </Section>
+
         <ButtonSection>
           <WorkButton
             imgSrc={lineIconButton}

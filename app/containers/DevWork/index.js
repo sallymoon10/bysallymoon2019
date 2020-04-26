@@ -61,15 +61,6 @@ const Gap = styled.div`
   padding-top: 5%;
 `;
 
-const Header = styled.h1`
-  flex: 1;
-  text-align: center;
-  font-weight: 300;
-  font-size: 1.2em;
-  padding-bottom: 5%;
-  padding-top: 2%;
-`;
-
 const ButtonSection = styled.div`
   display: flex;
   flex-direction: row;
@@ -81,18 +72,34 @@ const ButtonSection = styled.div`
   padding-top: 2%;
 `;
 
-const SectionImage = styled.img`
-  width: 80%;
-  height: 80%;
+const Header = styled.h1`
   flex: 1;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.2em;
+  padding-top: 2%;
+  margin-bottom: -5%;
 `;
 
-const Footer = styled.div`
+const Section = styled.div`
   display: flex;
   flex-direction: row;
-  justifycontent: center;
-  alignitems: center;
-  padding-right: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  justifyContent: center;
+  alignItems: center;
+`;
+
+
+const Underline = styled.h1`
+  flex: 1;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin-left: 35%;
+  margin-right: 35%;
 `;
 
 const mimicInfo = {
@@ -252,13 +259,16 @@ class DevWork extends React.Component {
 
   render() {
     if (this.state.isLoading) return <Loader/>;
-    
+
     return (
       <Container>
         <NavBar devState/>
-        <Gap/>
-
-        <Header>Machine Learning / AI</Header>
+        <Section>
+          <Header>Machine Learning / AI</Header>
+        </Section>
+        <Section>
+          <Underline></Underline>
+        </Section>
 
         <ButtonSection>
           <WorkButton
@@ -351,7 +361,12 @@ class DevWork extends React.Component {
           />
         </ButtonSection>
 
-        <Header>Mobile & Web Apps</Header>
+        <Section>
+          <Header>Mobile & Web Apps</Header>
+        </Section>
+        <Section>
+          <Underline></Underline>
+        </Section>
 
         <ButtonSection>
           <WorkButton
@@ -390,7 +405,12 @@ class DevWork extends React.Component {
           />
         </ButtonSection>
 
-        <Header>Games</Header>
+        <Section>
+          <Header>Games</Header>
+        </Section>
+        <Section>
+          <Underline></Underline>
+        </Section>
         <ButtonSection>
           <WorkButton
             imgSrc={unityButton}
