@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import { Link } from 'react-router-dom';
 import colors from '../../components/Colors';
 import NavBar from '../../components/NavBar';
@@ -21,6 +21,7 @@ import ViewContactButton from '../../images/Buttons/ViewContactButton.png';
 import FooterTop from '../../components/FooterTop';
 import FooterBottom from '../../components/FooterBottom';
 import Loader from '../../components/Loader';
+import '../../components/styles.css';
 
 const Container = styled.div`
   width: 100%;
@@ -84,6 +85,61 @@ const ButtonImage = styled.img`
   height: 50%;
 `;
 
+function FadeInSection(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <Section
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef} style={{ backgroundColor: colors.white}}>
+      {props.children}
+    </Section>
+  );
+}
+
+function FadeInSectionRed(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <Section
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef} style={{ backgroundColor: colors.red}}>
+      {props.children}
+    </Section>
+  );
+}
+
+function FadeInSectionBlue(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <Section
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef} style={{ backgroundColor: colors.blue}}>
+      {props.children}
+    </Section>
+  );
+}
+
+
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
@@ -107,10 +163,11 @@ class HomePage extends React.Component {
     return (
       <Container>
         <NavBar />
-        <Section style={{ backgroundColor: colors.white }}>
+        <FadeInSection  color={colors.red} >
           <Image src={intro} />
-        </Section>
-        <Section style={{ backgroundColor: colors.red }}>
+        </FadeInSection>
+
+        <FadeInSectionRed>
           <SectionImage src={aiLanding} />
           <RightButton style={{ backgroundColor: 'transparent' }}>
             <Link to="/devwork">
@@ -123,13 +180,14 @@ class HomePage extends React.Component {
                     this.state.devWorkButtonHover
                       ? 'scale(1.05,1.05)'
                       : 'scale(1,1)'
-                  }`,
+                    }`,
                 }}
               />
             </Link>
           </RightButton>
-        </Section>
-        <Section style={{ backgroundColor: colors.blue }}>
+        </FadeInSectionRed>
+
+        <FadeInSectionBlue>
           <SectionImage src={codeLanding} />
           <LeftButton style={{ backgroundColor: 'transparent' }}>
             <Link to="/devwork">
@@ -142,13 +200,14 @@ class HomePage extends React.Component {
                     this.state.devWorkButtonHover
                       ? 'scale(1.05,1.05)'
                       : 'scale(1,1)'
-                  }`,
+                    }`,
                 }}
               />
             </Link>
           </LeftButton>
-        </Section>
-        <Section style={{ backgroundColor: colors.red }}>
+        </FadeInSectionBlue>
+
+        <FadeInSectionRed>
           <SectionImage src={designLanding} />
           <RightButton style={{ backgroundColor: 'transparent' }}>
             <Link to="/designwork">
@@ -165,13 +224,13 @@ class HomePage extends React.Component {
                     this.state.designWorkButtonHover
                       ? 'scale(1.05,1.05)'
                       : 'scale(1,1)'
-                  }`,
+                    }`,
                 }}
               />
             </Link>
           </RightButton>
-        </Section>
-        <Section style={{ backgroundColor: colors.white }}>
+        </FadeInSectionRed>
+        <FadeInSection>
           <SectionImage src={letsWork} />
           <CenterButton style={{ backgroundColor: 'transparent' }}>
             <Link to="/contacts">
@@ -184,12 +243,12 @@ class HomePage extends React.Component {
                     this.state.contactsButtonHover
                       ? 'scale(1.05,1.05)'
                       : 'scale(1,1)'
-                  }`,
+                    }`,
                 }}
               />
             </Link>
           </CenterButton>
-        </Section>
+        </FadeInSection>
         <FooterTop/>
         <FooterBottom/>
       </Container>

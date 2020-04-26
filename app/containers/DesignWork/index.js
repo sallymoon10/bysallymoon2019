@@ -39,10 +39,6 @@ const Container = styled.div`
   width: 100%;
 `;
 
-const Gap = styled.div`
-  padding-top: 5%;
-`;
-
 const ButtonSection = styled.div`
   display: flex;
   flex-direction: row;
