@@ -117,7 +117,7 @@ const msbertInfo = {
     'MS-BERT is a contextual language model built upon Blue-BERT (NCBI BERT). It was further pretrained on ~70k clinical examination notes from Multiple Sclerosis clinic at St. Michael’s Hospital.',
   features:
     'MS-BERT is optimized for clinical NLP tasks, particularly those pertaining to multiple sclerosis. MS-BERT is published for research and commercial use and has 500+ downloads to date. ',
-  tools: 'HuggingFace Transformers, Blue-BERT',
+  tools: 'HuggingFace Transformers, Blue-BERT, BERT',
   affil:
     'NLP4H (Organization), St. Michael’s Hospital, University of Toronto (Dr. Marzyeh).',
 };
@@ -138,7 +138,7 @@ const snorkelInfo = {
   header:
     'Semi-supervised labelling of neurology examination notes using Snorkel',
   desc:
-    'A Snorkel pipeline to label raw neurology examination notes based on MS severity types (EDSS, functional subscores, etc). Implemented various labelling functions such as regex-based keyword searches and a CNN model trained on manual labelled data.',
+    'A Snorkel pipeline to label neurology examination notes based on MS severity types (EDSS, functional subscores, etc). Implemented various labelling functions such as regex-based keyword searches and a CNN model trained on manual labelled data.',
   features:
     'Labelled ~70k neurology notes,  significantly increasing the amount of training data available. The performance of the classifier trained on Snorkel-labelled data (weighted  F1: 0.91) was comparable to the performance of the classifier trained on manual-labelled data (weighted F1: 0.94), and therefore proved its potential to replace expensive manual labelling processes. ',
   tools: 'Snorkel',
@@ -199,7 +199,7 @@ const reactNativeInfo = {
 const heatmapInfo = {
   header: 'EI Pro: heatmap body injury location feature',
   desc:
-    'A feature for EI Pro that visualizes which body parts police officers targetting during arrest and conflict',
+    'A feature for EI Pro that visualizes which body parts police officers are targetting during arrest and conflict',
   features:
     'Allows governing bodies to determine whether police officers are using force in safe areas',
   tools: 'Javascript, Heatmap.js, JSON',

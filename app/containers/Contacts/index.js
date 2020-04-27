@@ -12,6 +12,7 @@ import FooterTop from '../../components/FooterTop';
 import FooterBottom from '../../components/FooterBottom';
 import Loader from '../../components/Loader';
 import colors from '../../components/Colors';
+import contactsImage from '../../images/Landing/ContactsImage.png';
 import '../../components/styles.css';
 
 const Section = styled.div`
@@ -70,6 +71,11 @@ const Gap = styled.div`
   padding-bottom: 15%;
 `;
 
+const Image = styled.img`
+  width: 60%;
+  margin-left:10%;
+`;
+
 function FadeInSection(props) {
   const [isVisible, setVisible] = React.useState(false);
   const domRef = React.useRef();
@@ -111,10 +117,12 @@ class Contacts extends React.Component {
           <Header>Let's get in touch!</Header>
         </FadeInSection>
         <FadeInSection>
-          <Underline></Underline>
+          <Underline/>
         </FadeInSection>
         <FadeInSection>
-          <SubSection>picture here</SubSection>
+          <SubSection>
+            <Image src={contactsImage}/>
+          </SubSection>
           <SubSection>
             <SubHeaderContainer>
               <SubHeader>E-mail: </SubHeader><Content>sallymoon10@gmail.com</Content>
