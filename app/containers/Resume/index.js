@@ -70,7 +70,7 @@ class Resume extends React.Component {
     if (this.state.isLoading) return <Loader/>;
     return (
       <Container>
-        <NavBar />
+        <NavBar resumeState/>
         <FadeInSection  color={colors.red} >
           <SectionImage src={CV1} />
         </FadeInSection>

@@ -188,12 +188,12 @@ class DesignWork extends React.Component {
     if (this.state.isLoading) return <Loader/>;
     return (
       <Container>
-        <NavBar/>
+        <NavBar designState/>
         <FadeInSection>
           <Header>User Interface / UX designs</Header>
         </FadeInSection>
         <FadeInSection>
-          <Underline></Underline>
+          <Underline/>
         </FadeInSection>
 
         <FadeInButtonSection>
@@ -225,7 +225,7 @@ class DesignWork extends React.Component {
           <Header>2D Illustrations / 3D assets</Header>
         </FadeInSection>
         <FadeInSection>
-          <Underline></Underline>
+          <Underline/>
         </FadeInSection>
 
         <FadeInButtonSection>

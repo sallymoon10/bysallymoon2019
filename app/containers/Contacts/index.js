@@ -112,7 +112,7 @@ class Contacts extends React.Component {
     if (this.state.isLoading) return <Loader/>;
     return (
       <Container>
-        <NavBar />
+        <NavBar contactsState/>
         <FadeInSection>
           <Header>Let's get in touch!</Header>
         </FadeInSection>
@@ -135,6 +135,9 @@ class Contacts extends React.Component {
             </SubHeaderContainer>
             <SubHeaderContainer>
               <SubHeader>IATSL (Lab) Profile: </SubHeader><a href={"https://www.iatsl.org/people/smoon.html"} target="_blank"><Content style={{ color: colors.blue}}>https://www.iatsl.org/people/smoon.html</Content></a>
+            </SubHeaderContainer>
+            <SubHeaderContainer>
+              <SubHeader>NLP4H: </SubHeader><a href={"https://nlp4h.com/"} target="_blank"><Content style={{ color: colors.blue}}>https://www.iatsl.org/people/smoon.html</Content></a>
             </SubHeaderContainer>
           </SubSection>
         </FadeInSection>

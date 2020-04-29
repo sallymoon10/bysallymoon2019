@@ -113,6 +113,8 @@ const msbertInfo = {
   header: 'MS-BERT: pre-trained language model for clinical NLP ',
   link: 'https://huggingface.co/NLP4H/ms_bert',
   linkTitle: 'Model download',
+  link2: 'https://nlp4h.com/blog/ms_bert_intro/',
+  linkTitle2: ' Blog post',
   desc:
     'MS-BERT is a contextual language model built upon Blue-BERT (NCBI BERT). It was further pretrained on ~70k clinical examination notes from Multiple Sclerosis clinic at St. Michael’s Hospital.',
   features:
@@ -300,7 +302,7 @@ class DevWork extends React.Component {
           <Header>Machine Learning / AI</Header>
         </FadeInSection>
         <FadeInSection>
-          <Underline></Underline>
+          <Underline/>
         </FadeInSection>
 
         <FadeInButtonSection>
@@ -310,6 +312,8 @@ class DevWork extends React.Component {
             img1Src={msBertImage1}
             link={msbertInfo.link}
             linkTitle={msbertInfo.linkTitle}
+            link2={msbertInfo.link2}
+            linkTitle2={msbertInfo.linkTitle2}
             header={msbertInfo.header}
             desc={msbertInfo.desc}
             features={msbertInfo.features}
@@ -398,7 +402,7 @@ class DevWork extends React.Component {
           <Header>Mobile & Web Apps</Header>
         </FadeInSection>
         <FadeInSection>
-          <Underline></Underline>
+          <Underline/>
         </FadeInSection>
 
         <FadeInButtonSection>
@@ -442,7 +446,7 @@ class DevWork extends React.Component {
           <Header>Games</Header>
         </FadeInSection>
         <FadeInSection>
-          <Underline></Underline>
+          <Underline/>
         </FadeInSection>
         <FadeInButtonSection>
           <WorkButton
