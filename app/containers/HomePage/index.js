@@ -154,7 +154,7 @@ class HomePage extends React.Component {
     this.setState({isLoading: true});
     setTimeout(() => {
       this.setState({isLoading: false})
-    }, 1000);
+    }, 1200);
   }
 
   render() {
