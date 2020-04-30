@@ -1,8 +1,6 @@
 {
   "homepage": "http://sallymoon10.github.io/bysallymoon2019",
-  "name": "react-boilerplate",
-  "version": "4.0.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "sally-moon-portfolio",
   "repository": {
     "type": "git",
     "url": "git://github.com/react-boilerplate/react-boilerplate.git"
@@ -11,7 +9,7 @@
     "npm": ">=5",
     "node": ">=8.15.1"
   },
-  "author": "Max Stoiber",
+  "author": "React Boiler plate, Max Stoiber",
   "license": "MIT",
   "scripts": {
     "predeploy": "npm run build",
