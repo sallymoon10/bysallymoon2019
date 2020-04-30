@@ -171,6 +171,24 @@ function FadeInButtonSection(props) {
   );
 }
 
+function FadeInSectionSmall(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <Section
+      className={`fade-in-section-small ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}>
+      {props.children}
+    </Section>
+  );
+}
+
 class DesignWork extends React.Component {
   constructor(props) {
     super(props);
@@ -189,12 +207,12 @@ class DesignWork extends React.Component {
     return (
       <Container>
         <NavBar designState/>
-        <FadeInSection>
+        <FadeInSectionSmall>
           <Header>User Interface / UX designs</Header>
-        </FadeInSection>
-        <FadeInSection>
+        </FadeInSectionSmall>
+        <FadeInSectionSmall>
           <Underline/>
-        </FadeInSection>
+        </FadeInSectionSmall>
 
         <FadeInButtonSection>
           <WorkButton
@@ -221,12 +239,12 @@ class DesignWork extends React.Component {
           />
         </FadeInButtonSection>
 
-        <FadeInSection>
+        <FadeInSectionSmall>
           <Header>2D Illustrations / 3D assets</Header>
-        </FadeInSection>
-        <FadeInSection>
+        </FadeInSectionSmall>
+        <FadeInSectionSmall>
           <Underline/>
-        </FadeInSection>
+        </FadeInSectionSmall>
 
         <FadeInButtonSection>
           <WorkButton

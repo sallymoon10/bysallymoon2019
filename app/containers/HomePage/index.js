@@ -147,7 +147,7 @@ class HomePage extends React.Component {
     this.state = { devWorkButtonHover: false };
     this.state = { designWorkButtonHover: false };
     this.state = { contactsButtonHover: false };
-    this.state = {isLoading: false};
+    this.state = { isLoading: false};
   }
 
   componentDidMount() {
@@ -163,7 +163,7 @@ class HomePage extends React.Component {
     return (
       <Container>
         <NavBar />
-        <FadeInSection  color={colors.red} >
+        <FadeInSection>
           <Image src={intro} />
         </FadeInSection>
 

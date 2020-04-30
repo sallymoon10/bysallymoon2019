@@ -260,6 +260,24 @@ function FadeInSection(props) {
   );
 }
 
+function FadeInSectionSmall(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <Section
+      className={`fade-in-section-small ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}>
+      {props.children}
+    </Section>
+  );
+}
+
 function FadeInButtonSection(props) {
   const [isVisible, setVisible] = React.useState(false);
   const domRef = React.useRef();
@@ -298,12 +316,12 @@ class DevWork extends React.Component {
     return (
       <Container>
         <NavBar devState/>
-        <FadeInSection>
+        <FadeInSectionSmall>
           <Header>Machine Learning / AI</Header>
-        </FadeInSection>
-        <FadeInSection>
+        </FadeInSectionSmall>
+        <FadeInSectionSmall>
           <Underline/>
-        </FadeInSection>
+        </FadeInSectionSmall>
 
         <FadeInButtonSection>
           <WorkButton
@@ -398,12 +416,12 @@ class DevWork extends React.Component {
           />
         </FadeInButtonSection>
 
-        <FadeInSection>
+        <FadeInSectionSmall>
           <Header>Mobile & Web Apps</Header>
-        </FadeInSection>
-        <FadeInSection>
+        </FadeInSectionSmall>
+        <FadeInSectionSmall>
           <Underline/>
-        </FadeInSection>
+        </FadeInSectionSmall>
 
         <FadeInButtonSection>
           <WorkButton
@@ -442,12 +460,12 @@ class DevWork extends React.Component {
           />
         </FadeInButtonSection>
 
-        <FadeInSection>
+        <FadeInSectionSmall>
           <Header>Games</Header>
-        </FadeInSection>
-        <FadeInSection>
+        </FadeInSectionSmall>
+        <FadeInSectionSmall>
           <Underline/>
-        </FadeInSection>
+        </FadeInSectionSmall>
         <FadeInButtonSection>
           <WorkButton
             imgSrc={unityButton}
