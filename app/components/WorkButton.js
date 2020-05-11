@@ -112,7 +112,7 @@ class WorkButton extends React.Component {
     return (
       <Container>
         <Button style={{ backgroundColor: 'transparent' }}>{button}</Button>
-        <Modal open={this.state.open} onClose={this.onCloseModal}>
+        <Modal style= {{transform: "translate3d(0, 0, 0);"}} open={this.state.open} onClose={this.onCloseModal}>
           <Section>
             <PictureSection>
               <PictureContainer>
